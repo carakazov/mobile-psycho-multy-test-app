@@ -1,0 +1,2 @@
+create user psycho_multi_test_user with password '1q2w3e';
+create database psycho_multi_test with owner psycho_multi_test_user;

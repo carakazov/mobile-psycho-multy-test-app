@@ -6,3 +6,15 @@ spring:
   liquibase:
     driver-class-name: org.postgresql.Driver
     change-log: db/changelog/changelog-master.xml
+
+application:
+  errorsMapping:
+    - SUCH_LOGIN_ALREADY_EXISTS:
+        code: suchLoginAlreadyExists
+        message: такой логин уже существует
+    - WRONG_LOGIN_FORM:
+        code: wrongLoginForm
+        message: логин не удволетворяет требованиям. Он должен содержать .....
+    - WRONG_PASSWORD_FORM:
+        code: wrongPasswordForm
+        message: логин не удволетворяет требованиям. Он должен содержать .....

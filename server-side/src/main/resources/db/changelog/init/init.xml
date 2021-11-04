@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="001" author="vadim.lebediantsev">
+        <createTable tableName="roles">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="title" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="users">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="name" type="varchar(125)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="surname" type="varchar(125)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gender" type="varchar(6)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="middle_name" type="varchar(125)"/>
+            <column name="external_id" type="uuid">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="login" type="varchar(125)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="password" type="varchar(125)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role_id" type="int">
+                <constraints nullable="false" foreignKeyName="user_role" references="roles(id)"/>
+            </column>
+            <column name="psychologist_id" type="int">
+                <constraints foreignKeyName="user_psychologist" references="users(id)"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="languages">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="code" type="varchar(3)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="texts">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="language_id" type="int">
+                <constraints foreignKeyName="text_language" references="languages(id)" nullable="false"/>
+            </column>
+            <column name="question_id" type="int"/>
+            <column name="answer_id" type="int"/>
+            <column name="test_id" type="int"/>
+        </createTable>
+
+        <createTable tableName="tests">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="external_id" type="uuid">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="title" type="varchar(1024)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gender_depending" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+            <column name="re_answer_enabled" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+            <column name="proceeding_type" type="varchar(25)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description_id" type="int">
+                <constraints foreignKeyName="description_text" references="texts(id)" nullable="false"/>
+            </column>
+            <column name="expected_time" type="varchar(35)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="questions">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false" unique="true"/>
+            </column>
+            <column name="external_id" type="uuid">
+                <constraints nullable="false"/>
+            </column>
+            <column name="picture" type="blob"/>
+            <column name="multi_answer" type="boolean">
+                <constraints nullable="false"/>
+            </column>
+            <column name="test_id" type="int">
+                <constraints nullable="false" foreignKeyName="question_test" references="tests(id)"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="answers">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="value" type="float">
+                <constraints nullable="false"/>
+            </column>
+            <column name="external_id" type="uuid">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="picture" type="blob"/>
+            <column name="question_id" type="int">
+                <constraints nullable="false" foreignKeyName="answer_question" references="questions(id)"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="test_results">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="test_id" type="int">
+                <constraints nullable="false" foreignKeyName="test_result_test" references="tests(id)"/>
+            </column>
+            <column name="value" type="varchar(5000)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="taken_tests">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="user_id" type="int">
+                <constraints nullable="false" foreignKeyName="taken_test_user" references="users(id)"/>
+            </column>
+            <column name="test_id" type="int">
+                <constraints nullable="false" foreignKeyName="taken_test_test" references="tests(id)"/>
+            </column>
+            <column name="result_id" type="int">
+                <constraints nullable="false" foreignKeyName="taken_test_result" references="test_results(id)"/>
+            </column>
+            <column name="start_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="finish_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+
+        <createTable tableName="answered_questions">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="question_id" type="int">
+                <constraints nullable="false" foreignKeyName="answered_question_question" references="questions(id)"/>
+            </column>
+            <column name="answer_id" type="int">
+                <constraints nullable="false" foreignKeyName="answered_question_answer" references="answers(id)"/>
+            </column>
+            <column name="taken_test_id" type="int">
+                <constraints nullable="false" foreignKeyName="answered_question_taken_test" references="taken_tests(id)"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="custom_tests">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" unique="true" primaryKey="true"/>
+            </column>
+            <column name="test_id" type="int">
+                <constraints nullable="false" foreignKeyName="custom_test_test" references="tests(id)"/>
+            </column>
+            <column name="author_id" type="int">
+                <constraints nullable="false" foreignKeyName="custom_test_user" references="users(id)"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="allowed_users">
+            <column name="user_id" type="int">
+                <constraints nullable="false" foreignKeyName="allowed_user_user" references="users(id)" primaryKey="true"/>
+            </column>
+            <column name="custom_test_id" type="int">
+                <constraints nullable="false" foreignKeyName="allowed_user_test" references="custom_tests(id)" primaryKey="true"/>
+            </column>
+        </createTable>
+        
+        <addForeignKeyConstraint baseTableName="texts" baseColumnNames="question_id" constraintName="text_question"
+                                 referencedTableName="questions"
+                                 referencedColumnNames="id"/>
+
+
+        <addForeignKeyConstraint baseTableName="texts" baseColumnNames="answer_id" constraintName="text_answer"
+                                 referencedTableName="answers"
+                                 referencedColumnNames="id"/>
+
+        <addForeignKeyConstraint baseTableName="texts" baseColumnNames="test_id" constraintName="text_test"
+                                 referencedTableName="tests"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

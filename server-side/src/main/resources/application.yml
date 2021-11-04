@@ -1,1 +1,8 @@
-
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/psycho_multi_test
+    username: psycho_multi_test_user
+    password: 1q2w3e
+  liquibase:
+    driver-class-name: org.postgresql.Driver
+    change-log: db/changelog/changelog-master.xml

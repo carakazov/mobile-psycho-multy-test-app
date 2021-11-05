@@ -22,7 +22,7 @@ public class ApplicationProperties {
     private String authHeader;
 
     @Data
-    @Accessors
+    @Accessors(chain = true)
     public static class ErrorDefinition {
         private String code;
         private String message;

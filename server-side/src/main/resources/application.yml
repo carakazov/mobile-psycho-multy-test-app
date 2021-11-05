@@ -8,18 +8,19 @@ spring:
     change-log: db/changelog/changelog-master.xml
 
 application:
-  errorsMapping:
-    - SUCH_LOGIN_ALREADY_EXISTS:
+  errorMapping:
+    SUCH_LOGIN_ALREADY_EXISTS:
         code: suchLoginAlreadyExists
         message: такой логин уже существует
-    - WRONG_LOGIN_FORM:
+    WRONG_LOGIN_FORM:
         code: wrongLoginForm
         message: логин не удволетворяет требованиям. Он должен содержать .....
-    - WRONG_PASSWORD_FORM:
+    WRONG_PASSWORD_FORM:
         code: wrongPasswordForm
         message: логин не удволетворяет требованиям. Он должен содержать .....
 
   loginRegEx: "[A-Za-z]"
   passwordRegEx: "[A-Za-z]"
   jwtSecret: my-jwt-secret
-  authHeader: Bearer
+  authHeader: Authorization
+  expirationTime: 600000

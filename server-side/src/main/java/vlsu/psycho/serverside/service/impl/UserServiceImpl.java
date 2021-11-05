@@ -38,7 +38,7 @@ public class UserServiceImpl implements UserService {
         User user = registrationMapper.from(
                 new RegistrationMappingDto()
                         .setDto(registrationDto)
-                        .setRole(roleService.findByTitle(RoleTitle.CLIENT))
+                        .setRole(roleService.findByTitle(RoleTitle.ROLE_CLIENT))
         );
         repository.save(user);
     }

@@ -2,6 +2,8 @@ package vlsu.psycho.serverside.controller.advice;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import vlsu.psycho.serverside.config.ApplicationProperties;
@@ -16,7 +18,7 @@ public class WebControllerAdvice {
     private final ApplicationProperties applicationProperties;
 
     @ExceptionHandler(ValidationException.class)
-    public ValidationExceptionResponseDto handleValidationException(ValidationException e) {
+    public ResponseEntity<ValidationExceptionResponseDto> handleValidationException(ValidationException e) {
         logException(e);
         ValidationExceptionResponseDto response = new ValidationExceptionResponseDto();
         e.getCodes().forEach(code -> {
@@ -27,7 +29,7 @@ public class WebControllerAdvice {
                             .setMessage(definition.getMessage())
             );
         });
-        return response;
+        return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
     }
 
     private void logException(Exception e) {

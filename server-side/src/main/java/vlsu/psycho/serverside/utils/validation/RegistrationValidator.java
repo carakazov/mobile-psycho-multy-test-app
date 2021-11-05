@@ -1,7 +1,5 @@
 package vlsu.psycho.serverside.utils.validation;
 
-import jdk.nashorn.internal.runtime.regexp.RegExp;
-import jdk.nashorn.internal.runtime.regexp.RegExpMatcher;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import vlsu.psycho.serverside.config.ApplicationProperties;

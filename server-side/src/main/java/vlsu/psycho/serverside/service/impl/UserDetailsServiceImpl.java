@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import vlsu.psycho.serverside.model.User;
+import vlsu.psycho.serverside.repository.UserRepository;
 import vlsu.psycho.serverside.service.UserService;
 
 import java.util.HashSet;
@@ -16,12 +17,12 @@ import java.util.Set;
 @Service
 @RequiredArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
-    private final UserService userService;
+    private final UserRepository repository;
 
     @Override
     public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
         try {
-            User user = userService.findByLogin(login);
+            User user = repository.findByLogin(login);
             Set<GrantedAuthority> ga = new HashSet<>();
             ga.add(new SimpleGrantedAuthority(user.getRole().getTitle().toString()));
             return new org.springframework.security.core.userdetails.User(

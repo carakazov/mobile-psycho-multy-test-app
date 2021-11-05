@@ -17,6 +17,9 @@ public class ApplicationProperties {
     private Map<ErrorCode, ErrorDefinition> errorMapping;
     private String passwordRegEx;
     private String loginRegEx;
+    private String jwtSecret;
+    private Long expirationTime;
+    private String authHeader;
 
     @Data
     @Accessors

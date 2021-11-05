@@ -20,7 +20,7 @@ public class User extends BaseEntity{
     @Enumerated(value = EnumType.STRING)
     private Gender gender;
     @Column(name = "external_id")
-    private UUID externalId;
+    private UUID externalId = UUID.randomUUID();
     private String password;
     private String login;
     private String email;

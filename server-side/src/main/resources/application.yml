@@ -18,3 +18,8 @@ application:
     - WRONG_PASSWORD_FORM:
         code: wrongPasswordForm
         message: логин не удволетворяет требованиям. Он должен содержать .....
+
+  loginRegEx: "[A-Za-z]"
+  passwordRegEx: "[A-Za-z]"
+  jwtSecret: my-jwt-secret
+  authHeader: Bearer

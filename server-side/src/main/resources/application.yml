@@ -18,6 +18,12 @@ application:
     WRONG_PASSWORD_FORM:
         code: wrongPasswordForm
         message: логин не удволетворяет требованиям. Он должен содержать .....
+    UNEXPECTED_TEST_EXTERNAL_ID:
+        code: unexpectedTestExternalId
+        message: Вы запрашиваете несуществующий тест
+    UNEXPECTED_LANGUAGE_CODE:
+        code: unexpectedLanguageCode
+        message: Неверный код языка
 
   loginRegEx: "[A-Za-z]"
   passwordRegEx: "[A-Za-z]"

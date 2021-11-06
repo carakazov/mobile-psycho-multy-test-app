@@ -3,8 +3,11 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
-
-    <!--Roles insert-->
-    <include file="db/changelog/patches/role-init/role-init.xml"/>
-    <include file="db/changelog/patches/add-text-value/add-text-value.xml"/>
+    <changeSet id="003" author="polina.saharowa">
+        <addColumn tableName="texts">
+            <column name="text" type="varchar(1024)">
+                <constraints nullable="false"/>
+            </column>
+        </addColumn>
+    </changeSet>
 </databaseChangeLog>

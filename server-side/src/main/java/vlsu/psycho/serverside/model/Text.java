@@ -28,4 +28,6 @@ public class Text extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "test_id")
     private Test test;
+
+    private String text;
 }

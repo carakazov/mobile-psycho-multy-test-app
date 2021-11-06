@@ -21,6 +21,12 @@ application:
     WRONG_CREDENTIALS:
         code: wrongCredentials
         message: неверный логин или пароль
+    UNEXPECTED_TEST_EXTERNAL_ID:
+        code: unexpectedTestExternalId
+        message: Вы запрашиваете несуществующий тест
+    UNEXPECTED_LANGUAGE_CODE:
+        code: unexpectedLanguageCode
+        message: Неверный код языка
 
   loginRegEx: "[A-Za-z]"
   passwordRegEx: "[A-Za-z]"

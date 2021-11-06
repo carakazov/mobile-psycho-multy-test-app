@@ -3,7 +3,6 @@ package vlsu.psycho.serverside.utils.mappers;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import vlsu.psycho.serverside.config.MappingConfiguration;
-import vlsu.psycho.serverside.dto.RegistrationDto;
 import vlsu.psycho.serverside.model.User;
 import vlsu.psycho.serverside.utils.mappers.dto.RegistrationMappingDto;
 

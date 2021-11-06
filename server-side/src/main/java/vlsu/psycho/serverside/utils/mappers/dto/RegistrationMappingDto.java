@@ -2,7 +2,7 @@ package vlsu.psycho.serverside.utils.mappers.dto;
 
 import lombok.Data;
 import lombok.experimental.Accessors;
-import vlsu.psycho.serverside.dto.RegistrationDto;
+import vlsu.psycho.serverside.dto.user.RegistrationDto;
 import vlsu.psycho.serverside.model.Role;
 
 @Data

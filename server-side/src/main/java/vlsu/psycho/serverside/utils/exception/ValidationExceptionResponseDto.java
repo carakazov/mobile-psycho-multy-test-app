@@ -7,9 +7,9 @@ import java.util.List;
 
 @Data
 public class ValidationExceptionResponseDto {
-    private final List<ValidationExceptionDto> exceptions = new ArrayList<>();
+    private final List<ExceptionDto> exceptions = new ArrayList<>();
 
-    public void addException(ValidationExceptionDto e) {
+    public void addException(ExceptionDto e) {
         exceptions.add(e);
     }
 }

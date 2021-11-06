@@ -6,20 +6,21 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import vlsu.psycho.serverside.dto.user.RegistrationDto;
-import vlsu.psycho.serverside.service.UserService;
+import vlsu.psycho.serverside.dto.auth.AuthRequestDto;
+import vlsu.psycho.serverside.dto.auth.AuthResponseDto;
+import vlsu.psycho.serverside.service.AuthService;
 
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/auth")
 @RequiredArgsConstructor
-public class UserController {
-    private final UserService userService;
+public class AuthController {
+    private final AuthService authService;
 
     @PostMapping
     @PreAuthorize("permitAll()")
-    public void register(@RequestBody @Valid RegistrationDto registrationDto) {
-        userService.register(registrationDto);
+    public AuthResponseDto authenticate(@RequestBody @Valid AuthRequestDto authRequestDto) {
+        return authService.getToken(authRequestDto);
     }
 }

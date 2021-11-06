@@ -18,6 +18,9 @@ application:
     WRONG_PASSWORD_FORM:
         code: wrongPasswordForm
         message: логин не удволетворяет требованиям. Он должен содержать .....
+    WRONG_CREDENTIALS:
+        code: wrongCredentials
+        message: неверный логин или пароль
 
   loginRegEx: "[A-Za-z]"
   passwordRegEx: "[A-Za-z]"

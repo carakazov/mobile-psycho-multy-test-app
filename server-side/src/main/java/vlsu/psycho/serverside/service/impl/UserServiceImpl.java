@@ -3,7 +3,7 @@ package vlsu.psycho.serverside.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import vlsu.psycho.serverside.dto.RegistrationDto;
+import vlsu.psycho.serverside.dto.user.RegistrationDto;
 import vlsu.psycho.serverside.model.RoleTitle;
 import vlsu.psycho.serverside.model.User;
 import vlsu.psycho.serverside.repository.UserRepository;

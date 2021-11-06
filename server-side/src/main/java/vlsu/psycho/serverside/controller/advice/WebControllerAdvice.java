@@ -7,8 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import vlsu.psycho.serverside.config.ApplicationProperties;
+import vlsu.psycho.serverside.utils.exception.BusinessException;
 import vlsu.psycho.serverside.utils.exception.ValidationException;
-import vlsu.psycho.serverside.utils.exception.ValidationExceptionDto;
+import vlsu.psycho.serverside.utils.exception.ExceptionDto;
 import vlsu.psycho.serverside.utils.exception.ValidationExceptionResponseDto;
 
 @RestControllerAdvice
@@ -23,13 +24,21 @@ public class WebControllerAdvice {
         ValidationExceptionResponseDto response = new ValidationExceptionResponseDto();
         e.getCodes().forEach(code -> {
             ApplicationProperties.ErrorDefinition definition = applicationProperties.getErrorMapping().get(code);
-            response.addException(
-                    new ValidationExceptionDto()
-                            .setCode(definition.getCode())
-                            .setMessage(definition.getMessage())
-            );
+            response.addException(getExceptionDto(definition));
         });
         return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(BusinessException.class)
+    public ResponseEntity<ExceptionDto> handleExceptions(BusinessException e) {
+        logException(e);
+        return new ResponseEntity<>(getExceptionDto(applicationProperties.getErrorMapping().get(e.getCode())), HttpStatus.UNAUTHORIZED);
+    }
+
+    private ExceptionDto getExceptionDto(ApplicationProperties.ErrorDefinition definition) {
+        return new ExceptionDto()
+                .setCode(definition.getCode())
+                .setMessage(definition.getMessage());
     }
 
     private void logException(Exception e) {

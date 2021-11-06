@@ -1,4 +1,4 @@
-package vlsu.psycho.serverside.dto;
+package vlsu.psycho.serverside.dto.user;
 import lombok.Data;
 import lombok.experimental.Accessors;
 import org.hibernate.validator.constraints.Length;

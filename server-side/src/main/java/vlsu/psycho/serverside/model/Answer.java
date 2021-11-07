@@ -16,7 +16,7 @@ import java.util.UUID;
 public class Answer extends BaseEntity {
     private Double value;
     @Column(name = "external_id")
-    private UUID externalId;
+    private UUID externalId = UUID.randomUUID();
     private byte[] picture;
     @ManyToOne
     @JoinColumn(name = "question_id")

@@ -33,3 +33,6 @@ application:
   jwtSecret: my-jwt-secret
   authHeader: Authorization
   expirationTime: 600000
+  claimForJwt:
+    - EXTERNAL_ID
+    - EMAIL

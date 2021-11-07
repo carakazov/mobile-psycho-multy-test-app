@@ -6,7 +6,9 @@ import lombok.experimental.Accessors;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 import vlsu.psycho.serverside.utils.exception.ErrorCode;
+import vlsu.psycho.serverside.utils.jwt.Claim;
 
+import java.util.List;
 import java.util.Map;
 
 @Data
@@ -20,6 +22,7 @@ public class ApplicationProperties {
     private String jwtSecret;
     private Long expirationTime;
     private String authHeader;
+    private List<Claim> claimForJwt;
 
     @Data
     @Accessors(chain = true)

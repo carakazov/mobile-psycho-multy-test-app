@@ -3,6 +3,7 @@ package vlsu.psycho.serverside.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.experimental.Accessors;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -12,6 +13,7 @@ import javax.persistence.ManyToOne;
 @Entity(name = "texts")
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
+@Accessors(chain = true)
 public class Text extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "language_id")

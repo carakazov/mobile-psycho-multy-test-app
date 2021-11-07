@@ -14,10 +14,10 @@ import java.util.UUID;
 @ToString(callSuper = true)
 public class Question extends BaseEntity {
     @Column(name = "external_id")
-    private UUID externalId;
+    private UUID externalId = UUID.randomUUID();
     private byte[] picture;
     @Column(name = "multi_answer")
-    private Boolean multiAnswer;
+    private Boolean multiAnswer = Boolean.FALSE;
     @OneToMany(mappedBy = "question")
     private List<Answer> answers;
     @ManyToOne

@@ -3,13 +3,18 @@ package vlsu.psycho.serverside.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import vlsu.psycho.serverside.dto.test.TestDto;
+import vlsu.psycho.serverside.dto.test.custom.AddCustomTestDto;
+import vlsu.psycho.serverside.model.CustomTest;
 import vlsu.psycho.serverside.model.Test;
+import vlsu.psycho.serverside.model.User;
 import vlsu.psycho.serverside.repository.TestRepository;
-import vlsu.psycho.serverside.service.LanguageService;
-import vlsu.psycho.serverside.service.TestService;
+import vlsu.psycho.serverside.service.*;
 import vlsu.psycho.serverside.utils.language.LanguageHelper;
 import vlsu.psycho.serverside.utils.mappers.TestMapper;
+import vlsu.psycho.serverside.utils.mappers.dto.AddCustomTestMappingDto;
+import vlsu.psycho.serverside.utils.validation.AddCustomTestValidator;
 import vlsu.psycho.serverside.utils.validation.Validator;
+import vlsu.psycho.serverside.utils.validation.dto.AddCustomTestValidationDto;
 import vlsu.psycho.serverside.utils.validation.dto.GetTestValidationDto;
 
 import javax.transaction.Transactional;
@@ -22,6 +27,8 @@ public class TestServiceImpl implements TestService {
     private final LanguageService languageService;
     private final Validator<GetTestValidationDto> getTestValidator;
     private final TestMapper testMapper;
+    private final QuestionService questionService;
+    private final TextService textService;
 
     @Override
     @Transactional
@@ -34,5 +41,19 @@ public class TestServiceImpl implements TestService {
         Test test = repository.findByExternalId(testExternalId);
         LanguageHelper.specifyLanguageInTest(test, languageCode);
         return testMapper.to(test);
+    }
+
+    @Override
+    @Transactional
+    public void save(Test test) {
+        Test savedTest = repository.save(test);
+        test.getDescriptions().forEach(text -> {
+            text.setTest(savedTest);
+            textService.save(text);
+        });
+        test.getQuestions().forEach(question -> {
+            question.setTest(savedTest);
+            questionService.save(question);
+        });
     }
 }

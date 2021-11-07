@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import vlsu.psycho.serverside.dto.test.TestDto;
 import vlsu.psycho.serverside.service.TestService;
 
+import javax.validation.constraints.NotNull;
 import java.util.UUID;
 
 @RestController

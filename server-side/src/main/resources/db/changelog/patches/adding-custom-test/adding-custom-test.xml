@@ -3,11 +3,12 @@
                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
-
-    <!--Roles insert-->
-    <include file="db/changelog/patches/role-init/role-init.xml"/>
-    <!--Adding text column in texts tables-->
-    <include file="db/changelog/patches/add-text-value/add-text-value.xml"/>
-    <!--Adding language codes-->
-    <include file="db/changelog/patches/adding-custom-test/adding-custom-test.xml"/>
+    <changeSet id="004" author="vadim.lebediantsev">
+        <insert tableName="languages">
+            <column name="code" value="RUS"/>
+        </insert>
+        <insert tableName="languages">
+            <column name="code" value="ENG"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>

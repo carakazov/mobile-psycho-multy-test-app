@@ -7,4 +7,5 @@ import vlsu.psycho.serverside.model.Language;
 @Repository
 public interface LanguageRepository extends JpaRepository<Language, Integer> {
     boolean existsByCode(String code);
+    Language findByCode(String languageCode);
 }

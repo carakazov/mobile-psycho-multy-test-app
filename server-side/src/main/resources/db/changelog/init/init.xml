@@ -88,9 +88,6 @@
             <column name="proceeding_type" type="varchar(25)">
                 <constraints nullable="false"/>
             </column>
-            <column name="description_id" type="int">
-                <constraints foreignKeyName="description_text" references="texts(id)" nullable="false"/>
-            </column>
             <column name="expected_time" type="varchar(35)">
                 <constraints nullable="false"/>
             </column>
@@ -103,7 +100,7 @@
             <column name="external_id" type="uuid">
                 <constraints nullable="false"/>
             </column>
-            <column name="picture" type="blob"/>
+            <column name="picture" type="bytea"/>
             <column name="multi_answer" type="boolean">
                 <constraints nullable="false"/>
             </column>
@@ -122,7 +119,7 @@
             <column name="external_id" type="uuid">
                 <constraints nullable="false" unique="true"/>
             </column>
-            <column name="picture" type="blob"/>
+            <column name="picture" type="bytea"/>
             <column name="question_id" type="int">
                 <constraints nullable="false" foreignKeyName="answer_question" references="questions(id)"/>
             </column>

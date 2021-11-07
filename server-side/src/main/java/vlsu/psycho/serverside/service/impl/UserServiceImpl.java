@@ -7,14 +7,19 @@ import vlsu.psycho.serverside.dto.user.RegistrationDto;
 import vlsu.psycho.serverside.model.RoleTitle;
 import vlsu.psycho.serverside.model.User;
 import vlsu.psycho.serverside.repository.UserRepository;
+import vlsu.psycho.serverside.service.AuthService;
 import vlsu.psycho.serverside.service.RoleService;
 import vlsu.psycho.serverside.service.UserService;
+import vlsu.psycho.serverside.utils.jwt.Claim;
+import vlsu.psycho.serverside.utils.jwt.JwtProvider;
 import vlsu.psycho.serverside.utils.mappers.RegistrationMapper;
 import vlsu.psycho.serverside.utils.mappers.dto.RegistrationMappingDto;
 import vlsu.psycho.serverside.utils.validation.Validator;
 import vlsu.psycho.serverside.utils.validation.dto.RegistrationValidationDto;
 
 import javax.transaction.Transactional;
+import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -24,6 +29,7 @@ public class UserServiceImpl implements UserService {
     private final RoleService roleService;
     private final Validator<RegistrationValidationDto> registrationValidator;
     private final RegistrationMapper registrationMapper;
+    private final JwtProvider jwtProvider;
 
     @Override
     @Transactional
@@ -46,5 +52,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findByLogin(String login) {
         return repository.findByLogin(login);
+    }
+
+    @Override
+    public User findByExternalId(UUID externalId) {
+        return repository.findByExternalId(externalId);
+    }
+
+    @Override
+    @Transactional
+    public List<User> getClientsOfUser() {
+        UUID externalId = UUID.fromString(jwtProvider.getClaimFromToken(Claim.EXTERNAL_ID).toString());;
+        User user = findByExternalId(externalId);
+        return repository.findAllByPsychologist(user);
     }
 }

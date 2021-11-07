@@ -18,7 +18,7 @@ import java.util.UUID;
 @ToString(callSuper = true)
 public class Test extends BaseEntity {
     @Column(name = "external_id")
-    private UUID externalId;
+    private UUID externalId = UUID.randomUUID();
     private String title;
     @Column(name = "gender_depending")
     private Boolean isGenderDepending;

@@ -31,6 +31,9 @@ public class User extends BaseEntity{
     @JoinColumn(name = "psychologist_id")
     private User psychologist;
 
+    @OneToMany(mappedBy = "psychologist")
+    private List<User> clients;
+
     @ManyToMany(mappedBy = "allowedUsers")
     private List<CustomTest> allowedTest;
 }

@@ -30,6 +30,7 @@ public class JwtFilter extends OncePerRequestFilter {
             String userLogin = jwtProvider.getLoginFromToken(token);
             UserDetails customUserDetails = userDetailsService.loadUserByUsername(userLogin);
             UsernamePasswordAuthenticationToken auth = new UsernamePasswordAuthenticationToken(customUserDetails, null, customUserDetails.getAuthorities());
+            auth.setDetails(token);
             SecurityContextHolder.getContext().setAuthentication(auth);
         }
         filterChain.doFilter(servletRequest, servletResponse);

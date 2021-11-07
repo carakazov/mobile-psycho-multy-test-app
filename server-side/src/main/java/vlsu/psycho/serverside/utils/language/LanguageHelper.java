@@ -11,21 +11,21 @@ import java.util.List;
 
 @UtilityClass
 public class LanguageHelper {
-    public static String getAnswerTextInLanguage(Answer answer, String languageCode) {
-        return answer.getTexts().stream().filter(
-                text -> text.getLanguage().getCode().equals(languageCode)
-        ).findFirst().get().getText();
+    public static void specifyLanguageInTest(Test test, String languageCode) {
+        test.getDescriptions().removeIf(text -> !text.getLanguage().getCode().equals(languageCode));
+        test.getQuestions().forEach(
+                question -> {
+                    specifyLanguageInQuestion(question, languageCode);
+                    question.getAnswers().forEach(answer -> specifyLanguageInAnswer(answer, languageCode));
+                }
+        );
     }
 
-    public static String getQuestionTextInLanguage(Question question, String languageCode) {
-        return question.getTexts().stream().filter(
-                text -> text.getLanguage().getCode().equals(languageCode)
-        ).findFirst().get().getText();
+    public static void specifyLanguageInQuestion(Question question, String languageCode) {
+        question.getTexts().removeIf(text -> !text.getLanguage().getCode().equals(languageCode));
     }
 
-    public static String getTestTextInLanguage(Test test, String languageCode) {
-        return test.getDescriptions().stream().filter(
-                text -> text.getLanguage().getCode().equals(languageCode)
-        ).findFirst().get().getText();
+    public static void specifyLanguageInAnswer(Answer answer, String languageCode) {
+        answer.getTexts().removeIf(text -> !text.getLanguage().getCode().equals(languageCode));
     }
 }

@@ -21,6 +21,6 @@ public class AuthController {
     @PostMapping
     @PreAuthorize("permitAll()")
     public AuthResponseDto authenticate(@RequestBody @Valid AuthRequestDto authRequestDto) {
-        return authService.getToken(authRequestDto);
+        return authService.createToken(authRequestDto);
     }
 }

@@ -6,7 +6,7 @@ import vlsu.psycho.serverside.config.MappingConfiguration;
 import vlsu.psycho.serverside.model.User;
 import vlsu.psycho.serverside.utils.mappers.dto.RegistrationMappingDto;
 
-@Mapper(config = MappingConfiguration.class, componentModel = "spring")
+@Mapper(config = MappingConfiguration.class)
 public interface RegistrationMapper {
 
     @Mapping(target = "name", source = "source.dto.name")

@@ -3,9 +3,11 @@ package vlsu.psycho.serverside.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import vlsu.psycho.serverside.dto.test.TestDto;
+import vlsu.psycho.serverside.model.Test;
 import vlsu.psycho.serverside.repository.TestRepository;
 import vlsu.psycho.serverside.service.LanguageService;
 import vlsu.psycho.serverside.service.TestService;
+import vlsu.psycho.serverside.utils.language.LanguageHelper;
 import vlsu.psycho.serverside.utils.mappers.TestMapper;
 import vlsu.psycho.serverside.utils.validation.Validator;
 import vlsu.psycho.serverside.utils.validation.dto.GetTestValidationDto;
@@ -29,6 +31,8 @@ public class TestServiceImpl implements TestService {
                         .setTestExist(repository.existsByExternalId(testExternalId))
                         .setLanguageExist(languageService.existsByCode(languageCode))
         );
-        return testMapper.to(repository.findByExternalId(testExternalId), languageCode);
+        Test test = repository.findByExternalId(testExternalId);
+        LanguageHelper.specifyLanguageInTest(test, languageCode);
+        return testMapper.to(test);
     }
 }

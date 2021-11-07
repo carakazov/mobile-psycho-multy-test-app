@@ -8,7 +8,8 @@ import org.mapstruct.ReportingPolicy;
 @MapperConfig(
         unmappedTargetPolicy = ReportingPolicy.IGNORE,
         mappingInheritanceStrategy = MappingInheritanceStrategy.AUTO_INHERIT_FROM_CONFIG,
-        collectionMappingStrategy = CollectionMappingStrategy.ADDER_PREFERRED
+        collectionMappingStrategy = CollectionMappingStrategy.ADDER_PREFERRED,
+        componentModel = "spring"
 )
 public class MappingConfiguration {
 }

@@ -28,8 +28,8 @@ application:
         code: unexpectedLanguageCode
         message: Неверный код языка
 
-  loginRegEx: "[A-Za-z]"
-  passwordRegEx: "[A-Za-z]"
+  loginRegEx: "[A-Za-z]*"
+  passwordRegEx: "[A-Za-z]*"
   jwtSecret: my-jwt-secret
   authHeader: Authorization
   expirationTime: 600000

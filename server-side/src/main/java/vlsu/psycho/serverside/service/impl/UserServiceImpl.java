@@ -7,7 +7,6 @@ import vlsu.psycho.serverside.dto.user.RegistrationDto;
 import vlsu.psycho.serverside.model.RoleTitle;
 import vlsu.psycho.serverside.model.User;
 import vlsu.psycho.serverside.repository.UserRepository;
-import vlsu.psycho.serverside.service.AuthService;
 import vlsu.psycho.serverside.service.RoleService;
 import vlsu.psycho.serverside.service.UserService;
 import vlsu.psycho.serverside.utils.jwt.Claim;

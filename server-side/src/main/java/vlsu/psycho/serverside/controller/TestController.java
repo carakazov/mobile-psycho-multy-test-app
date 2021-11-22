@@ -1,6 +1,7 @@
 package vlsu.psycho.serverside.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ public class TestController {
     private final TestService testService;
 
     @GetMapping("{testId}/{language}")
+    @Secured({"ROLE_CLIENT", "ROLE_PSYCHOLOGIST"})
     public TestDto getTest(@PathVariable UUID testId, @PathVariable String language) {
         return testService.getTest(testId, language);
     }

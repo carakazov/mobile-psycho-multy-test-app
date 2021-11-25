@@ -7,6 +7,8 @@ import vlsu.psycho.serverside.model.Test;
 import java.util.UUID;
 
 public interface TestService {
+    Test getTestByExternalId(UUID testExternalId);
+    boolean existsByExternalId(UUID testExternalId);
     TestDto getTest(UUID testExternalId, String languageCode);
     void save(Test test);
 }

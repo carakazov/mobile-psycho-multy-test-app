@@ -27,9 +27,25 @@ application:
     UNEXPECTED_LANGUAGE_CODE:
         code: unexpectedLanguageCode
         message: Неверный код языка
+    NOT-EMAIL:
+        code: notEmail
+        message: Указанный Вами адрес электронной почты не является валидным
+    UNEXPECTED_GENDER:
+        code: unexpectedGender
+        message: Пожалуйста, уточните Ваш пол
+    UNEXPECTED_ANSWER_EXTERNAL_ID:
+        code: unexpectedAnswerExternalId
+        message: Неизветный внешний идентификатор ответа
+    UNEXPECTED_QUESTION_EXTERNAL_ID:
+        code: unexpectedQuestionExternalId
+        message: Неизвестный внешний идентификатор вопроса
+    END_DATE_IS_BEFORE_START_DATE:
+        code: endDateIsBeforeSartDate
+        message: Дата окончания должна быть позднее, чем дата начала
 
   loginRegEx: "[A-Za-z]*"
   passwordRegEx: "[A-Za-z]*"
+  emailRegEx: "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$"
   jwtSecret: my-jwt-secret
   authHeader: Authorization
   expirationTime: 600000

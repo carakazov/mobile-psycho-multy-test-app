@@ -56,4 +56,14 @@ public class TestServiceImpl implements TestService {
             questionService.save(question);
         });
     }
+
+    @Override
+    public Test getTestByExternalId(UUID testExternalId) {
+        return repository.findByExternalId(testExternalId);
+    }
+
+    @Override
+    public boolean existsByExternalId(UUID testExternalId) {
+        return repository.existsByExternalId(testExternalId);
+    }
 }

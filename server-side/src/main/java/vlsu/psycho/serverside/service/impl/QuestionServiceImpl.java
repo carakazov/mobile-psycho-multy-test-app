@@ -9,6 +9,7 @@ import vlsu.psycho.serverside.service.QuestionService;
 import vlsu.psycho.serverside.service.TextService;
 
 import javax.transaction.Transactional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -29,5 +30,10 @@ public class QuestionServiceImpl implements QuestionService {
             answer.setQuestion(savedQuestion);
             answerService.save(answer);
         });
+    }
+
+    @Override
+    public boolean existsByExternalId(UUID externalId) {
+        return repository.existsByExternalId(externalId);
     }
 }

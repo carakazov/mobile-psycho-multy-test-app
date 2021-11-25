@@ -28,4 +28,8 @@ public class ValidationHelper {
             throw exception;
         }
     }
+
+    public void addCode(ErrorCode code) {
+        codes.add(code);
+    }
 }

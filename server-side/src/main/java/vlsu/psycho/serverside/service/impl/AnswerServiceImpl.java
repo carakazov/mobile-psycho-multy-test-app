@@ -8,6 +8,7 @@ import vlsu.psycho.serverside.service.AnswerService;
 import vlsu.psycho.serverside.service.TextService;
 
 import javax.transaction.Transactional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -23,5 +24,10 @@ public class AnswerServiceImpl implements AnswerService {
             text.setAnswer(savedAnswer);
             textService.save(text);
         });
+    }
+
+    @Override
+    public boolean existsByExternalId(UUID answerExternalId) {
+        return repository.existsByExternalId(answerExternalId);
     }
 }

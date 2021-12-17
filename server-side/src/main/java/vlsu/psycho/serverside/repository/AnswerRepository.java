@@ -9,4 +9,5 @@ import java.util.UUID;
 @Repository
 public interface AnswerRepository extends JpaRepository<Answer, Integer> {
     boolean existsByExternalId(UUID externalId);
+    Answer findByExternalId(UUID externalId);
 }

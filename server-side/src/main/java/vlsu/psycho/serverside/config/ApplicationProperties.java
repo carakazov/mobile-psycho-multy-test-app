@@ -11,6 +11,7 @@ import vlsu.psycho.serverside.utils.jwt.Claim;
 
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 @Data
 @Accessors(chain = true)
@@ -25,6 +26,11 @@ public class ApplicationProperties {
     private Long expirationTime;
     private String authHeader;
     private List<Claim> claimForJwt;
+    private List<UUID> selfUnsatisfactory;
+    private List<UUID> lockedInCage;
+    private List<UUID> professionalDutiesReduction;
+    private List<UUID> emotionalDetachment;
+    private List<UUID> selfDetachement;
 
     @Data
     @Accessors(chain = true)

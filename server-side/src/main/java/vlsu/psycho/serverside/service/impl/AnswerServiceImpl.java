@@ -30,4 +30,9 @@ public class AnswerServiceImpl implements AnswerService {
     public boolean existsByExternalId(UUID answerExternalId) {
         return repository.existsByExternalId(answerExternalId);
     }
+
+    @Override
+    public Answer findByExternalId(UUID externalId) {
+        return repository.findByExternalId(externalId);
+    }
 }

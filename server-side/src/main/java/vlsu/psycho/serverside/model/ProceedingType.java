@@ -1,5 +1,7 @@
 package vlsu.psycho.serverside.model;
 
 public enum ProceedingType {
-    AVERAGE
+    AVERAGE,
+    GEOMETRIC,
+    BURN_OUT;
 }

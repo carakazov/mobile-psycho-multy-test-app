@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="007" author="polina.saharova">
+        <insert tableName="tests">
+            <column name="title" value="Диагностика уровня эмоционального выгорания В.В.Бойко (в модиф. Е.Ильина)"/>
+            <column name="gender_depending" value="false"/>
+            <column name="re_answer_enabled" value="false"/>
+            <column name="proceeding_type" value="BURN_OUT"/>
+            <column name="expected_time" value="Примерно 30 минут"/>
+        </insert>
+
+
+        <insert tableName="texts">
+            <column name="test_id" value="1"/>
+            <column name="text" value="Вам предлагается ряд утверждений, по каждому выскажите свое мнение. Если
+вы согласны с утверждением, нажмите 'да', если не согласны – то знак 'нет'."/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+        <insert tableName="questions">
+            <column name="test_id" value="1"/>
+            <column name="multi_answer" value="false"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="1"/>
+            <column name="text" value="Сегодня я доволен своей профессией не меньше, чем в начале карьеры"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="1"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="answer_id" value="1"/>
+            <column name="text" value="Да"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="1"/>
+            <column name="value" value="3"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="answer_id" value="2"/>
+            <column name="text" value="Нет"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+
+        <insert tableName="questions">
+            <column name="test_id" value="1"/>
+            <column name="multi_answer" value="false"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="2"/>
+            <column name="text" value="Я ошибся в выборе профессии или профиля деятельности (занимаю не свое место)."/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="2"/>
+            <column name="value" value="10"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="answer_id" value="3"/>
+            <column name="text" value="Да"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="2"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="answer_id" value="4"/>
+            <column name="text" value="Нет"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+
+
+        <insert tableName="questions">
+            <column name="test_id" value="1"/>
+            <column name="multi_answer" value="false"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="3"/>
+            <column name="text" value="Когда я чувствую усталость или напряжение, то стараюсь поскорее «свернуть» дело"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="3"/>
+            <column name="value" value="5"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="answer_id" value="5"/>
+            <column name="text" value="Да"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="3"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="answer_id" value="6"/>
+            <column name="text" value="Нет"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+
+
+
+
+        <insert tableName="questions">
+            <column name="test_id" value="1"/>
+            <column name="multi_answer" value="false"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="4"/>
+            <column name="text" value="Моя работа притупляет эмоции."/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="4"/>
+            <column name="value" value="2"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="answer_id" value="7"/>
+            <column name="text" value="Да"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="2"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="answer_id" value="8"/>
+            <column name="text" value="Нет"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+
+
+        <insert tableName="questions">
+            <column name="test_id" value="1"/>
+            <column name="multi_answer" value="false"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="5"/>
+            <column name="text" value="Я откровенно устал от проблем, с которыми приходится иметь дело на работе."/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="5"/>
+            <column name="value" value="5"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="answer_id" value="9"/>
+            <column name="text" value="Да"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="10"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="answer_id" value="8"/>
+            <column name="text" value="Нет"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+
+
+        <insert tableName="questions">
+            <column name="test_id" value="1"/>
+            <column name="multi_answer" value="false"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="6"/>
+            <column name="text" value="Работа приносит мне все больше удовлетворения"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="6"/>
+            <column name="value" value="5"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="answer_id" value="9"/>
+            <column name="text" value="Да"/>
+            <column name="language_id" value="1"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="10"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="answer_id" value="8"/>
+            <column name="text" value="Нет"/>
+            <column name="language_id" value="1"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

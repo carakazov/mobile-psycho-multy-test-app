@@ -1,6 +1,5 @@
 package vlsu.psycho.serverside.service.impl;
 
-import liquibase.pro.packaged.T;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import vlsu.psycho.serverside.dto.test.taken.TakenTestDto;
@@ -40,7 +39,9 @@ public class TakenTestServiceImpl implements TakenTestService {
         Test test = testService.getTestByExternalId(takenTestDto.getTestExternalId());
         takenTest.setTest(test);
         takenTest.setUser(user);
-        takenTest.setResult(testResultService.calculateResult(takenTestDto.getAnswers()));
+        takenTest.setResult(testResultService.calculateResult(takenTestDto.getAnswers(), test.getExternalId(), test.getProceedingType()));
+        takenTest.setStartDate(takenTestDto.getStartDate());
+        takenTest.setFinishDate(takenTestDto.getFinishDate());
         repository.save(takenTest);
     }
 

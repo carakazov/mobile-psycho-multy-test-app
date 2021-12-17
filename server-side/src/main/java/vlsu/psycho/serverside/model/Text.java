@@ -31,5 +31,9 @@ public class Text extends BaseEntity {
     @JoinColumn(name = "test_id")
     private Test test;
 
+    @ManyToOne
+    @JoinColumn(name = "result_id")
+    private TestResult result;
+
     private String text;
 }

@@ -42,8 +42,6 @@ public class TakenTestServiceImpl implements TakenTestService {
         takenTest.setUser(user);
         takenTest.setResult(testResultService.calculateResult(takenTestDto.getAnswers()));
         repository.save(takenTest);
-
-
     }
 
     private TakenTestValidationDto formValidationDto(TakenTestDto takenTestDto) {

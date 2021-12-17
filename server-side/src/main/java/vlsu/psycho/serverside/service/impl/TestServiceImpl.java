@@ -45,7 +45,7 @@ public class TestServiceImpl implements TestService {
 
     @Override
     @Transactional
-    public void save(Test test) {
+    public Test save(Test test) {
         Test savedTest = repository.save(test);
         test.getDescriptions().forEach(text -> {
             text.setTest(savedTest);
@@ -55,6 +55,7 @@ public class TestServiceImpl implements TestService {
             question.setTest(savedTest);
             questionService.save(question);
         });
+        return savedTest;
     }
 
     @Override

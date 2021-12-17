@@ -10,4 +10,8 @@
     <include file="db/changelog/patches/add-text-value/add-text-value.xml"/>
     <!--Adding language codes-->
     <include file="db/changelog/patches/adding-custom-test/adding-custom-test.xml"/>
+    <!--Adding borders for test results-->
+    <include file="db/changelog/patches/test_results-modification/test_results-modification.xml"/>
+    <!--Multi language results-->
+    <include file="db/changelog/patches/test_results-modification/adding-multi-language-results.xml"/>
 </databaseChangeLog>

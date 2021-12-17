@@ -42,6 +42,9 @@ application:
     END_DATE_IS_BEFORE_START_DATE:
         code: endDateIsBeforeSartDate
         message: Дата окончания должна быть позднее, чем дата начала
+    SAME_RESULT_BORDERS:
+        code: sameResultBorders
+        message: Минимальная и максимальная границы не могут быть идентичны
 
   loginRegEx: "[A-Za-z]*"
   passwordRegEx: "[A-Za-z]*"

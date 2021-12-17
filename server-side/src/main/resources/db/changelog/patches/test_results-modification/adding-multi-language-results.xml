@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="006" author="polina.saharova">
+        <dropColumn tableName="test_results" columnName="value"/>
+
+        <addColumn tableName="texts">
+            <column name="result_id" type="int">
+                <constraints nullable="true" foreignKeyName="text_result" references="test_results(id)"/>
+            </column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

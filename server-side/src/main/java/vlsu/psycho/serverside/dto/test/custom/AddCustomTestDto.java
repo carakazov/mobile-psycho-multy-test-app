@@ -26,6 +26,8 @@ public class AddCustomTestDto {
     private String expectedTime;
     @NotEmpty
     private List<AddCustomQuestionDto> questions;
+    @NotEmpty
+    private List<AddTestResultDto> results;
     @NotBlank
     @Length(max = 3)
     private String languageCode;

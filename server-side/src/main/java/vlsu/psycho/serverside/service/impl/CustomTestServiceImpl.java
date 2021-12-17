@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.support.TransactionTemplate;
 import vlsu.psycho.serverside.dto.test.custom.AddCustomTestDto;
 import vlsu.psycho.serverside.model.CustomTest;
+import vlsu.psycho.serverside.model.Test;
 import vlsu.psycho.serverside.model.User;
 import vlsu.psycho.serverside.repository.CustomTestRepository;
 import vlsu.psycho.serverside.service.*;
@@ -33,19 +34,22 @@ public class CustomTestServiceImpl implements CustomTestService {
     private final LanguageService languageService;
     private final JwtProvider jwtProvider;
     private final TestService testService;
+    private final TestResultService testResultService;
 
     @Override
     @Transactional
     public void createCustomTest(AddCustomTestDto addCustomTestDto) {
         addCustomTestValidator.validate(new AddCustomTestValidationDto().setLanguageExists(
-                languageService.existsByCode(addCustomTestDto.getLanguageCode())
-        ));
+                languageService.existsByCode(addCustomTestDto.getLanguageCode()))
+                .setResults(addCustomTestDto.getResults())
+        );
         addCustomTestDto.setLanguage(languageService.findByCode(addCustomTestDto.getLanguageCode()));
         UUID externalId = UUID.fromString(jwtProvider.getClaimFromToken(Claim.EXTERNAL_ID).toString());
         User author = userService.findByExternalId(externalId);
         CustomTest customTest = testMapper.from(new AddCustomTestMappingDto().setDto(addCustomTestDto).setAuthor(author));
         customTest.setAllowedUsers(userService.getClientsOfUser());
-        testService.save(customTest.getTest());
+        Test test = testService.save(customTest.getTest());
         repository.save(customTest);
+        testResultService.saveTestResults(addCustomTestDto.getResults(), test, addCustomTestDto.getLanguageCode());
     }
 }

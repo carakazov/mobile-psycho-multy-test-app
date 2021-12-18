@@ -6,9 +6,7 @@ import lombok.ToString;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 import java.util.UUID;
 
@@ -25,6 +23,7 @@ public class Test extends BaseEntity {
     @Column(name = "re_answer_enabled")
     private Boolean isReAnswerEnabled;
     @Column(name = "proceeding_type")
+    @Enumerated(value = EnumType.STRING)
     private ProceedingType proceedingType;
     @Column(name = "expected_time")
     private String expectedTime;

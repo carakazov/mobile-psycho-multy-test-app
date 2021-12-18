@@ -1,6 +1,7 @@
 package vlsu.psycho.serverside.service;
 
 import vlsu.psycho.serverside.dto.user.ChangePersonalInfoDto;
+import vlsu.psycho.serverside.dto.user.PersonalInfoDto;
 import vlsu.psycho.serverside.dto.user.RegistrationDto;
 import vlsu.psycho.serverside.model.User;
 
@@ -13,4 +14,5 @@ public interface UserService {
     User findByExternalId(UUID externalId);
     List<User> getClientsOfUser();
     void changePersonalInfo(ChangePersonalInfoDto changePersonalInfoDto);
+    PersonalInfoDto getPersonalInfo();
 }

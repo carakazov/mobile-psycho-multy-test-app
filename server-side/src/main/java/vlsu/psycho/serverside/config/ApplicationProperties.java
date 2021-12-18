@@ -30,7 +30,8 @@ public class ApplicationProperties {
     private List<UUID> lockedInCage;
     private List<UUID> professionalDutiesReduction;
     private List<UUID> emotionalDetachment;
-    private List<UUID> selfDetachement;
+    private List<UUID> selfDetachment;
+    private UUID burnOutId;
 
     @Data
     @Accessors(chain = true)

@@ -58,16 +58,14 @@ public class TestResultServiceImpl implements TestResultService {
     }
 
     private TestResult calculateBurnOut(List<AnsweredQuestionDto> answeredQuestions, UUID testExternalId) {
-        Map<UUID, UUID> questionAnswerMap = formMapFromListForBurnOut(answeredQuestions);
-        int resultNumber = calculateSymptom(questionAnswerMap, applicationProperties.getSelfUnsatisfactory());
-        resultNumber += calculateSymptom(questionAnswerMap, applicationProperties.getLockedInCage());
-        resultNumber += calculateSymptom(questionAnswerMap, applicationProperties.getProfessionalDutiesReduction());
-        resultNumber += calculateSymptom(questionAnswerMap, applicationProperties.getEmotionalDetachment());
-        resultNumber += calculateSymptom(questionAnswerMap, applicationProperties.getSelfDetachement());
+        int sum;
+        List<UUID> answers  = answeredQuestions.stream()
+                .map(AnsweredQuestionDto::getTestAnswerId)
+                .collect(Collectors.toList());
+        sum = answers.stream().mapToDouble(item -> answerService.findByExternalId(item).getValue()).mapToInt(value -> (int) value).sum();
         List<TestResult> resultList = repository.findAllByTestExternalId(testExternalId);
-        int finalResultNumber = resultNumber;
         return resultList.stream()
-                .filter(item -> item.getMinBorder() >= finalResultNumber && finalResultNumber <= item.getMaxBorder())
+                .filter(item -> item.getMinBorder() <= sum && sum <= item.getMaxBorder())
                 .findFirst().get();
     }
 

@@ -35,4 +35,9 @@ public class AnswerServiceImpl implements AnswerService {
     public Answer findByExternalId(UUID externalId) {
         return repository.findByExternalId(externalId);
     }
+
+    @Override
+    public Answer findById(int id) {
+        return repository.getById(id);
+    }
 }

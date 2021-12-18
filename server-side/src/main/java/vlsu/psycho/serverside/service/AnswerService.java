@@ -8,4 +8,5 @@ public interface AnswerService {
     void save(Answer answer);
     boolean existsByExternalId(UUID answerExternalId);
     Answer findByExternalId(UUID externalId);
+    Answer findById(int id);
 }

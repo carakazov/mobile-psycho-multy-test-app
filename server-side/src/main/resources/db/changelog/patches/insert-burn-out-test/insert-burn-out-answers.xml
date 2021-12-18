@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="011" author="polina.saharova">
+        <insert tableName="answers">
+            <column name="question_id" value="1"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="1"/>
+            <column name="value" value="3"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="2"/>
+            <column name="value" value="10"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="2"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="3"/>
+            <column name="value" value="5"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="3"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="4"/>
+            <column name="value" value="2"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="4"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="5"/>
+            <column name="value" value="5"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="5"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="6"/>
+            <column name="value" value="2"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="6"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="7"/>
+            <column name="value" value="5"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="7"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="8"/>
+            <column name="value" value="5"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="8"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="9"/>
+            <column name="value" value="3"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="9"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="10"/>
+            <column name="value" value="3"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="10"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="11"/>
+            <column name="value" value="2"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="11"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="12"/>
+            <column name="value" value="2"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="12"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="13"/>
+            <column name="value" value="2"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="13"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="14"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="14"/>
+            <column name="value" value="2"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="15"/>
+            <column name="value" value="3"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="15"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="16"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="16"/>
+            <column name="value" value="10"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="17"/>
+            <column name="value" value="2"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="17"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="18"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="18"/>
+            <column name="value" value="2"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="19"/>
+            <column name="value" value="3"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="19"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="20"/>
+            <column name="value" value="2"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="20"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="21"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="21"/>
+            <column name="value" value="5"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="22"/>
+            <column name="value" value="5"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="22"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="23"/>
+            <column name="value" value="3"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="23"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="24"/>
+            <column name="value" value="5"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="24"/>
+            <column name="value" value="0"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="25"/>
+            <column name="value" value="5"/>
+        </insert>
+
+        <insert tableName="answers">
+            <column name="question_id" value="25"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="26"/>
+            <column name="value" value="5"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="26"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="27"/>
+            <column name="value" value="1"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="27"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="28"/>
+            <column name="value" value="3"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="28"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="29"/>
+            <column name="value" value="5"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="29"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="30"/>
+            <column name="value" value="2"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="30"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="31"/>
+            <column name="value" value="3"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="31"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="32"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="32"/>
+            <column name="value" value="5"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="33"/>
+            <column name="value" value="10"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="33"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="34"/>
+            <column name="value" value="10"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="34"/>
+            <column name="value" value="0"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="35"/>
+            <column name="value" value="10"/>
+        </insert>
+
+
+        <insert tableName="answers">
+            <column name="question_id" value="35"/>
+            <column name="value" value="0"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

@@ -4,14 +4,24 @@
                    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <!--Roles insert-->
-    <include file="db/changelog/patches/role-init/role-init.xml"/>
-    <!--Adding text column in texts tables-->
-    <include file="db/changelog/patches/add-text-value/add-text-value.xml"/>
-    <!--Adding language codes-->
-    <include file="db/changelog/patches/adding-custom-test/adding-custom-test.xml"/>
-    <!--Adding borders for test results-->
-    <include file="db/changelog/patches/test_results-modification/test_results-modification.xml"/>
-    <!--Multi language results-->
-    <include file="db/changelog/patches/test_results-modification/adding-multi-language-results.xml"/>
+<!--Roles insert-->
+<include file="db/changelog/patches/role-init/role-init.xml"/>
+<!--Adding text column in texts tables-->
+<include file="db/changelog/patches/add-text-value/add-text-value.xml"/>
+<!--Adding language codes-->
+<include file="db/changelog/patches/adding-custom-test/adding-custom-test.xml"/>
+<!--Adding borders for test results-->
+<include file="db/changelog/patches/test_results-modification/test_results-modification.xml"/>
+<!--Multi language results-->
+<include file="db/changelog/patches/test_results-modification/adding-multi-language-results.xml"/>
+<!--Taken test external id-->
+<include file="db/changelog/patches/taken_tests-external-id/taken_tests-external-id.xml"/>
+
+ <include file="db/changelog/patches/insert-burn-out-test/insert-burn-out-test.xml"/>
+ <include file="db/changelog/patches/insert-burn-out-test/insert-burn-out-questions.xml"/>
+ <include file="db/changelog/patches/insert-burn-out-test/insert-burn-out-question-texts.xml"/>
+ <include file="db/changelog/patches/insert-burn-out-test/insert-burn-out-answers.xml"/>
+ <include file="db/changelog/patches/insert-burn-out-test/insert-burn-out-answer-texts.xml"/>
+ <include file="db/changelog/patches/insert-burn-out-test/insert-burn-out-test-results.xml"/>
+ <include file="db/changelog/patches/insert-burn-out-test/insert-burn-out-test-result-texts.xml"/>
 </databaseChangeLog>

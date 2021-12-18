@@ -5,6 +5,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import vlsu.psycho.serverside.dto.user.ChangePersonalInfoDto;
 import vlsu.psycho.serverside.dto.user.ChangeablePersonalInfo;
+import vlsu.psycho.serverside.dto.user.PersonalInfoDto;
 import vlsu.psycho.serverside.dto.user.RegistrationDto;
 import vlsu.psycho.serverside.model.Gender;
 import vlsu.psycho.serverside.model.RoleTitle;
@@ -94,6 +95,18 @@ public class UserServiceImpl implements UserService {
                 value.change(user, map.get(key));
             }
         });
+    }
+
+    @Override
+    public PersonalInfoDto getPersonalInfo() {
+        UUID clientId = UUID.fromString(jwtProvider.getClaimFromToken(Claim.EXTERNAL_ID).toString());
+        User user = repository.findByExternalId(clientId);
+        return new PersonalInfoDto()
+                .setName(user.getName())
+                .setEmail(user.getEmail())
+                .setSurname(user.getSurname())
+                .setMiddleName(user.getMiddleName())
+                .setGender(user.getGender());
     }
 
     @FunctionalInterface

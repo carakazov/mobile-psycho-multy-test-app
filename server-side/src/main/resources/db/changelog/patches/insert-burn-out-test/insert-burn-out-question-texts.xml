@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="011" author="polina.saharova">
+        <insert tableName="texts">
+            <column name="language_id" value="2"/>
+            <column name="question_id" value="1"/>
+            <column name="text" value="Сегодня я доволен своей профессией не меньше, чем в начале карьеры."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="2"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Я ошибся в выборе профессии или профиля деятельности (занимаю не свое место)."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="3"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Когда я чувствую усталость или напряжение, то стараюсь поскорее «свернуть» дело."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="4"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Моя работа притупляет эмоции."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="5"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Я откровенно устал от проблем, с которыми приходится иметь дело на работе"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="6"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Работа приносит мне все больше удовлетворения."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="7"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Я бы сменил место работы, если бы представилась возможность."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="8"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Из-за усталости или напряжения я уделяю своим делам меньше внимания, чем положено."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="9"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Я спокойно воспринимаю претензии ко мне начальства и коллег по работе."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="10"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Общение с коллегами по работе побуждает меня сторониться людей."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="11"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Мне все труднее устанавливать и поддерживать контакты с коллегами"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="12"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Обстановка на работе мне кажется очень трудной, сложной."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="13"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Бывают дни, когда мое эмоциональное состояние плохо сказывается на результатах работы."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="14"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Я очень переживаю за свою работу."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="15"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Коллегам по работе я уделяю внимания больше, чем получаю от них"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="16"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Я часто радуюсь, видя, что моя работа приносит пользу людям"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="17"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Последнее время меня преследуют неудачи на работе."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="18"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Я обычно проявляю интерес к коллегам и помимо того, что касается дела."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="19"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Я иногда ловлю себя на мысли, что работаю автоматически, без души"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="20"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="По работе встречаются настолько неприятные люди, что невольно желаешь им чего-нибудь плохого"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="21"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Успехи в работе вдохновляют меня."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="22"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Ситуация на работе, в которой я оказался, кажется почти безвыходной."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="23"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Я часто работаю через силу"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="24"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="В работе с людьми я руководствуюсь принципом: не трать нервы, береги здоровье."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="25"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Иногда я иду на работу с тяжелым чувством: как все надоело, никого бы не видеть и не слышать."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="26"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Иногда мне кажется, что результаты моей работы не стоят тех усилий, которые я затрачиваю."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="27"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Если бы мне повезло с работой, я был бы более счастлив."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="28"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Обычно я тороплю время: скорее бы рабочий день кончился."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="29"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Работая с людьми, я обычно как бы ставлю экран, защищающий от чужих страданий и отрицательных эмоций."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="30"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Моя работа меня очень разочаровала."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="31"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Мои требования к выполняемой работе выше, чем-то, чего я достигаю в силу обстоятельств."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="32"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Моя карьера сложилась удачно."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="33"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Если предоставляется возможность, я уделяю работе меньше внимания, но чтобы этого никто не заметил"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="34"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Ко всему, что происходит на работе, я утратил интерес."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="35"/>
+            <column name="language_id" value="2"/>
+            <column name="text" value="Моя работа плохо на меня повлияла – обозлила, притупила эмоции, сделала нервным."/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

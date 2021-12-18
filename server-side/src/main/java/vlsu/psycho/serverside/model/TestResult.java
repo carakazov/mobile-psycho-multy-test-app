@@ -21,4 +21,7 @@ public class TestResult extends BaseEntity {
 
     @Column(name = "max_border")
     private double maxBorder;
+
+    @OneToMany(mappedBy = "result")
+    private List<Text> texts;
 }

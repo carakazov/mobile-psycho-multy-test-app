@@ -45,6 +45,12 @@ application:
     SAME_RESULT_BORDERS:
         code: sameResultBorders
         message: Минимальная и максимальная границы не могут быть идентичны
+    NO_SUCH_TEST_IN_SUCH_LANGUAGE:
+        code: noSuchTestInSuchLanguage
+        message: Простите, вы еще не проходили данный тест на таком языке
+    NOT_YOUR_CLIENT:
+        code: notYourClient
+        message: Это не ваш клиент
 
   loginRegEx: "[A-Za-z]*"
   passwordRegEx: "[A-Za-z]*"
@@ -55,3 +61,6 @@ application:
   claimForJwt:
     - EXTERNAL_ID
     - EMAIL
+
+  burnOutId: 4e85a270-472c-465b-a9ff-1b59405e12ff
+

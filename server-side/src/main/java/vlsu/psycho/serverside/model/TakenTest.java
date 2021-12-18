@@ -11,6 +11,7 @@ import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
 @Entity(name = "taken_tests")
@@ -31,4 +32,6 @@ public class TakenTest extends BaseEntity {
     private LocalDateTime startDate;
     @Column(name = "finish_date")
     private LocalDateTime finishDate;
+    @Column(name = "external_id")
+    private UUID externalId = UUID.randomUUID();
 }

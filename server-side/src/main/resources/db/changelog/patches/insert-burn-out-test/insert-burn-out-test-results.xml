@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="003" author="polina.saharova">
+        <insert tableName="test_results">
+            <column name="test_id" value="1"/>
+            <column name="min_border" value="0"/>
+            <column name="max_border" value="49"/>
+        </insert>
+        <insert tableName="test_results">
+            <column name="test_id" value="1"/>
+            <column name="min_border" value="50"/>
+            <column name="max_border" value="79"/>
+        </insert>
+        <insert tableName="test_results">
+            <column name="test_id" value="1"/>
+            <column name="min_border" value="80"/>
+            <column name="max_border" value="150"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

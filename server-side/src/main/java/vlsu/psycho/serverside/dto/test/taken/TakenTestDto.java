@@ -13,6 +13,7 @@ import java.util.UUID;
 public class TakenTestDto {
     private UUID testExternalId;
     private LocalDateTime startDate;
+    private String languageCode;
     private LocalDateTime finishDate;
     private List<AnsweredQuestionDto> answers;
 }

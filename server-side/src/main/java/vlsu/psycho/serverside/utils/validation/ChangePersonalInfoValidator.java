@@ -22,11 +22,7 @@ public class ChangePersonalInfoValidator implements Validator<ChangePersonalInfo
         ValidationHelper helper = ValidationHelper.getInstance();
         String email = target.getInfoToChange().get(ChangeablePersonalInfo.EMAIL);
         if(Objects.nonNull(email)) {
-            helper.validate(
-                    email,
-                    (mail) -> Pattern.matches(applicationProperties.getPasswordRegEx(), email),
-                    ErrorCode.NOT_EMAIL
-            );
+
         }
         String gender = target.getInfoToChange().get(ChangeablePersonalInfo.GENDER);
         if(Objects.nonNull(gender)) {

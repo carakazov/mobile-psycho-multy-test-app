@@ -17,7 +17,6 @@ import java.util.UUID;
 public class Test extends BaseEntity {
     @Column(name = "external_id")
     private UUID externalId = UUID.randomUUID();
-    private String title;
     @Column(name = "gender_depending")
     private Boolean isGenderDepending;
     @Column(name = "re_answer_enabled")
@@ -25,8 +24,6 @@ public class Test extends BaseEntity {
     @Column(name = "proceeding_type")
     @Enumerated(value = EnumType.STRING)
     private ProceedingType proceedingType;
-    @Column(name = "expected_time")
-    private String expectedTime;
     @OneToMany(mappedBy = "test")
     private List<Question> questions;
     @OneToMany(mappedBy = "test")

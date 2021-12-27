@@ -62,6 +62,15 @@ public class JwtProvider {
         return false;
     }
 
+    public boolean isAuthorized() {
+        return !(SecurityContextHolder.getContext().getAuthentication().getPrincipal() == "anonymousUser");
+    }
+
+    public String getRole() {;
+        String a = (SecurityContextHolder.getContext().getAuthentication().getAuthorities().toArray()[0]).toString();
+        return (SecurityContextHolder.getContext().getAuthentication().getAuthorities().toArray()[0]).toString();
+    }
+
     public String getLoginFromToken(String token) {
         return Jwts.parser().setSigningKey(properties.getJwtSecret()).parseClaimsJws(token).getBody().getSubject();
     }

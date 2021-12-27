@@ -19,6 +19,8 @@ import java.util.List;
 public interface TestMapper {
     @Mapping(target = "description", source = "test", qualifiedByName = "getText")
     @Mapping(target = "questions", source = "questions")
+    @Mapping(target = "title", expression = "java(test.getDescriptions().get(0).getTestTitle())")
+    @Mapping(target = "expectedTime", expression = "java(test.getDescriptions().get(0).getTestTime())")
     TestDto to(Test test);
 
 

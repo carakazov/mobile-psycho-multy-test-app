@@ -48,7 +48,8 @@ public class CustomTestServiceImpl implements CustomTestService {
         User author = userService.findByExternalId(externalId);
         CustomTest customTest = testMapper.from(new AddCustomTestMappingDto().setDto(addCustomTestDto).setAuthor(author));
         customTest.setAllowedUsers(userService.getClientsOfUser());
-        Test test = testService.save(customTest.getTest());
+        customTest.getAllowedUsers().add(author);
+        Test test = testService.save(customTest.getTest(), addCustomTestDto.getTitle(), addCustomTestDto.getExpectedTime());
         repository.save(customTest);
         testResultService.saveTestResults(addCustomTestDto.getResults(), test, addCustomTestDto.getLanguageCode());
     }

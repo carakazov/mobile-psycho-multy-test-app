@@ -213,5 +213,216 @@
             <column name="language_id" value="2"/>
             <column name="text" value="Моя работа плохо на меня повлияла – обозлила, притупила эмоции, сделала нервным."/>
         </insert>
+
+
+        <insert tableName="texts">
+            <column name="language_id" value="1"/>
+            <column name="question_id" value="1"/>
+            <column name="text" value="Today I am as satisfied with my profession as I was at the beginning of my career."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="2"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="I made a mistake in choosing a profession or profile of activity (I am not in my place)."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="3"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="When I feel tired or stressed, I try to 'wind down' the case as soon as possible."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="4"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="My work dulls emotions."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="5"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="I'm frankly tired of the problems I have to deal with at work."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="6"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="My work brings me more and more satisfaction."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="7"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="I would change jobs if the opportunity presented itself."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="8"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="Due to fatigue or stress, I pay less attention to my business than I should."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="9"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="I calmly accept the claims of my superiors and colleagues at work."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="10"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="Communicating with my work colleagues encourages me to stay away from people."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="11"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="I find it increasingly difficult to establish and maintain contacts with colleagues"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="12"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="The situation at work seems to me to be very difficult, complicated."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="13"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="There are days when my emotional state is bad for my work results."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="14"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="I am very worried about my work."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="15"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="I pay more attention to my colleagues than I receive from them."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="16"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="I often rejoice seeing that my work is beneficial to people."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="17"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="Lately, I have been haunted by failures at work."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="18"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="I usually show interest in colleagues and beyond the case."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="19"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="I sometimes catch myself thinking that I work automatically, without a soul"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="20"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="At work, there are people so unpleasant that you involuntarily wish them something bad."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="21"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="Success in my work inspires me."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="22"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="The work situation I find myself in seems almost hopeless.."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="23"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="I often work through strength"/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="24"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="In working with people, I am guided by the principle: do not waste your nerves, take care of your health."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="25"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="Sometimes I go to work with a heavy feeling: I’m tired of everything, I wouldn’t see or hear anyone."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="26"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="Sometimes it seems to me that the results of my work are not worth the effort that I spend.."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="27"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="If I was lucky with my job, I would be happier."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="28"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="Usually I rush the time: the working day would be over as soon as possible."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="29"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="When working with people, I usually put on a screen that protects from other people's suffering and negative emotions."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="30"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="My job really disappointed me."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="31"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="My requirements for the work performed are higher than what I achieve by force of circumstances."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="32"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="My career has gone well."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="33"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="If given the opportunity, I pay less attention to the work, but so that no one notices it."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="34"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="I have lost interest in everything that happens at work."/>
+        </insert>
+
+        <insert tableName="texts">
+            <column name="question_id" value="35"/>
+            <column name="language_id" value="1"/>
+            <column name="text" value="My work had a bad effect on me - it made me angry, dulled my emotions, made me nervous."/>
+        </insert>
     </changeSet>
 </databaseChangeLog>

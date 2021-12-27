@@ -1,6 +1,7 @@
 package vlsu.psycho.serverside.service.impl;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
 import vlsu.psycho.serverside.config.ApplicationProperties;
 import vlsu.psycho.serverside.dto.test.custom.AddTestResultDto;
@@ -26,8 +27,8 @@ public class TestResultServiceImpl implements TestResultService {
     private final AnswerService answerService;
     private final ApplicationProperties applicationProperties;
     @Override
-    public TestResult calculateResult(List<AnsweredQuestionDto> answeredQuestions, UUID testExternalId, ProceedingType proceedingType) {
-        TestResult result = null;
+    public Pair<TestResult, Number> calculateResult(List<AnsweredQuestionDto> answeredQuestions, UUID testExternalId, ProceedingType proceedingType) {
+        Pair<TestResult, Number> result = null;
         switch (proceedingType) {
             case AVERAGE:
                 result = calculateArithmeticAverage(answeredQuestions, testExternalId);
@@ -57,16 +58,16 @@ public class TestResultServiceImpl implements TestResultService {
         );
     }
 
-    private TestResult calculateBurnOut(List<AnsweredQuestionDto> answeredQuestions, UUID testExternalId) {
+    private Pair<TestResult, Number> calculateBurnOut(List<AnsweredQuestionDto> answeredQuestions, UUID testExternalId) {
         int sum;
         List<UUID> answers  = answeredQuestions.stream()
                 .map(AnsweredQuestionDto::getTestAnswerId)
                 .collect(Collectors.toList());
         sum = answers.stream().mapToDouble(item -> answerService.findByExternalId(item).getValue()).mapToInt(value -> (int) value).sum();
         List<TestResult> resultList = repository.findAllByTestExternalId(testExternalId);
-        return resultList.stream()
+        return Pair.of(resultList.stream()
                 .filter(item -> item.getMinBorder() <= sum && sum <= item.getMaxBorder())
-                .findFirst().get();
+                .findFirst().get(), sum);
     }
 
     private int calculateSymptom(Map<UUID, UUID> questionAnswerMap, List<UUID> symptom) {
@@ -85,23 +86,23 @@ public class TestResultServiceImpl implements TestResultService {
         return map;
     }
 
-    private TestResult calculateArithmeticAverage(List<AnsweredQuestionDto> answeredQuestions, UUID testExternalId) {
+    private Pair<TestResult, Number> calculateArithmeticAverage(List<AnsweredQuestionDto> answeredQuestions, UUID testExternalId) {
         double average = answeredQuestions.stream()
                 .map(AnsweredQuestionDto::getTestAnswerId)
                 .map(answerService::findByExternalId)
                 .mapToDouble(answer -> answer.getValue().intValue())
                 .average().getAsDouble();
-        return repository.findAllByTestExternalId(testExternalId).stream()
+        return Pair.of(repository.findAllByTestExternalId(testExternalId).stream()
                 .filter(item -> item.getMinBorder() >= average && average <= item.getMaxBorder())
-                .findFirst().get();
+                .findFirst().get(), average);
     }
 
-    private TestResult calculateGeometricAverage(List<AnsweredQuestionDto> answeredQuestions, UUID testExternalId) {
-        double multiply = 0;
+    private Pair<TestResult, Number> calculateGeometricAverage(List<AnsweredQuestionDto> answeredQuestions, UUID testExternalId) {
+        double multiply = 1;
         multiply *= answeredQuestions.stream().map(item -> answerService.findByExternalId(item.getTestAnswerId())).mapToDouble(Answer::getValue).reduce(1, (a, b) -> a * b);
         double result = Math.pow(multiply, 1.0/answeredQuestions.size());
-        return repository.findAllByTestExternalId(testExternalId).stream()
+        return Pair.of(repository.findAllByTestExternalId(testExternalId).stream()
                 .filter(item -> item.getMinBorder() >= result && result <= item.getMaxBorder())
-                .findFirst().get();
+                .findFirst().get(), multiply);
     }
 }

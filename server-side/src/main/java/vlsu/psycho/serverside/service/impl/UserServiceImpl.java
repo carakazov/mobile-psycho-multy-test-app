@@ -3,16 +3,20 @@ package vlsu.psycho.serverside.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import vlsu.psycho.serverside.config.ApplicationProperties;
 import vlsu.psycho.serverside.dto.user.ChangePersonalInfoDto;
 import vlsu.psycho.serverside.dto.user.ChangeablePersonalInfo;
 import vlsu.psycho.serverside.dto.user.PersonalInfoDto;
 import vlsu.psycho.serverside.dto.user.RegistrationDto;
 import vlsu.psycho.serverside.model.Gender;
 import vlsu.psycho.serverside.model.RoleTitle;
+import vlsu.psycho.serverside.model.Test;
 import vlsu.psycho.serverside.model.User;
+import vlsu.psycho.serverside.repository.TestRepository;
 import vlsu.psycho.serverside.repository.UserRepository;
 import vlsu.psycho.serverside.service.AuthService;
 import vlsu.psycho.serverside.service.RoleService;
+import vlsu.psycho.serverside.service.TestService;
 import vlsu.psycho.serverside.service.UserService;
 import vlsu.psycho.serverside.utils.jwt.Claim;
 import vlsu.psycho.serverside.utils.jwt.JwtProvider;
@@ -40,6 +44,7 @@ public class UserServiceImpl implements UserService {
         ChangeablePersonalInfo.GENDER, (user, gender) -> user.setGender(Gender.valueOf(gender))
     );
 
+    private final ApplicationProperties applicationProperties;
     private final UserRepository repository;
     private final PasswordEncoder encoder;
     private final RoleService roleService;
@@ -47,7 +52,7 @@ public class UserServiceImpl implements UserService {
     private final RegistrationMapper registrationMapper;
     private final JwtProvider jwtProvider;
     private final Validator<ChangePersonalInfoDto> changePersonalInfoValidator;
-
+    private final TestRepository testRepository;
     @Override
     @Transactional
     public void register(RegistrationDto registrationDto) {

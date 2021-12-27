@@ -68,6 +68,8 @@
             <column name="question_id" type="int"/>
             <column name="answer_id" type="int"/>
             <column name="test_id" type="int"/>
+            <column name="test_title" type="varchar(1024)"/>
+            <column name="test_time" type="varchar(35)"/>
         </createTable>
 
         <createTable tableName="tests">
@@ -77,9 +79,6 @@
             <column name="external_id" type="uuid" defaultValueComputed="gen_random_uuid()">
                 <constraints nullable="false" unique="true"/>
             </column>
-            <column name="title" type="varchar(1024)">
-                <constraints nullable="false"/>
-            </column>
             <column name="gender_depending" type="boolean">
                 <constraints nullable="false"/>
             </column>
@@ -87,9 +86,6 @@
                 <constraints nullable="false"/>
             </column>
             <column name="proceeding_type" type="varchar(25)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="expected_time" type="varchar(35)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
@@ -208,5 +204,6 @@
         <addForeignKeyConstraint baseTableName="texts" baseColumnNames="test_id" constraintName="text_test"
                                  referencedTableName="tests"
                                  referencedColumnNames="id"/>
+
     </changeSet>
 </databaseChangeLog>

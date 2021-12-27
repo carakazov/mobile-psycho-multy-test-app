@@ -28,7 +28,7 @@ public class AuthServiceImpl implements AuthService {
     public AuthResponseDto createToken(AuthRequestDto requestDto) {
         User user = userService.findByLogin(requestDto.getLogin());;
         if(Objects.nonNull(user) && encoder.matches(requestDto.getPassword(), user.getPassword())) {
-            return new AuthResponseDto().setToken(jwtProvider.generateToken(user));
+            return new AuthResponseDto().setToken(jwtProvider.generateToken(user)).setRole(user.getRole().getTitle().toString());
         } else {
             throw new BusinessException().setCode(ErrorCode.WRONG_CREDENTIALS);
         }

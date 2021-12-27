@@ -8,6 +8,7 @@ import vlsu.psycho.serverside.dto.test.TestDto;
 import vlsu.psycho.serverside.dto.test.custom.AddCustomTestDto;
 import vlsu.psycho.serverside.model.CustomTest;
 import vlsu.psycho.serverside.model.Test;
+import vlsu.psycho.serverside.model.Text;
 import vlsu.psycho.serverside.model.User;
 import vlsu.psycho.serverside.repository.TestRepository;
 import vlsu.psycho.serverside.service.*;
@@ -25,6 +26,7 @@ import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -54,10 +56,12 @@ public class TestServiceImpl implements TestService {
 
     @Override
     @Transactional
-    public Test save(Test test) {
+    public Test save(Test test, String title, String expectedTime) {
         Test savedTest = repository.save(test);
         test.getDescriptions().forEach(text -> {
             text.setTest(savedTest);
+            text.setTestTime(title);
+            text.setTestTime(expectedTime);
             textService.save(text);
         });
         test.getQuestions().forEach(question -> {
@@ -78,20 +82,34 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public List<ShowTestDto> getAvailableTests() {
-        UUID clientId = UUID.fromString(jwtProvider.getClaimFromToken(Claim.EXTERNAL_ID).toString());
+    public List<ShowTestDto> getAvailableTests(String languageCode) {
         Test test = repository.findByExternalId(applicationProperties.getBurnOutId());
-        User user = userService.findByExternalId(clientId);
-        List<CustomTest> customTests = user.getAllowedTest();
         List<Test> tests = new ArrayList<>();
         tests.add(test);
-        customTests.forEach(item -> tests.add(item.getTest()));
         List<ShowTestDto> showTests = new ArrayList<>();
-        tests.forEach(item -> showTests.add(new ShowTestDto()
-                .setTitle(item.getTitle())
-                .setExpectedTime(item.getExpectedTime())
-                .setExternalId(item.getExternalId()))
+        if(jwtProvider.isAuthorized()) {
+            UUID clientId = UUID.fromString(jwtProvider.   getClaimFromToken(Claim.EXTERNAL_ID).toString());
+            User user = userService.findByExternalId(clientId);
+            List<CustomTest> customTests = user.getAllowedTest().stream()
+                    .filter(item -> item.getTest().getDescriptions().stream().anyMatch(desc -> desc.getLanguage().getCode().equals(languageCode)))
+                    .collect(Collectors.toList());
+
+            customTests.forEach(item -> tests.add(item.getTest()));
+        }
+
+
+        tests.forEach(item -> {
+            Text text = item.getDescriptions().stream().filter(desc -> desc.getLanguage().getCode().equals(languageCode)).findFirst().get();
+            showTests.add(new ShowTestDto()
+                    .setTitle(text.getTestTitle())
+                    .setExternalId(item.getExternalId()));
+                }
         );
         return showTests;
+    }
+
+    @Override
+    public TestDto getDefaultTest(String language) {
+        return getTest(applicationProperties.getBurnOutId(), language);
     }
 }

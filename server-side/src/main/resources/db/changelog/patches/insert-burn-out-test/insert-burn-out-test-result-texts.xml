@@ -19,5 +19,21 @@
             <column name="result_id" value="3"/>
             <column name="text" value="Сложившееся 'выгорание'."/>
         </insert>
+
+        <insert tableName="texts">
+            <column name="language_id" value="1"/>
+            <column name="result_id" value="1"/>
+            <column name="text" value="No 'burnout'."/>
+        </insert>
+        <insert tableName="texts">
+            <column name="language_id" value="1"/>
+            <column name="result_id" value="2"/>
+            <column name="text" value="Incipient 'burnout'."/>
+        </insert>
+        <insert tableName="texts">
+            <column name="language_id" value="1"/>
+            <column name="result_id" value="3"/>
+            <column name="text" value="Existing 'burnout'."/>
+        </insert>
     </changeSet>
 </databaseChangeLog>

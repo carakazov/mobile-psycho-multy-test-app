@@ -9,10 +9,8 @@ import javax.validation.constraints.NotBlank;
 @Accessors(chain = true)
 public class RegistrationDto {
     @NotBlank
-    @Length(min = 5, max = 15)
     private String login;
     @NotBlank
-    @Length(min = 5, max = 15)
     private String password;
     @NotBlank
     private String name;

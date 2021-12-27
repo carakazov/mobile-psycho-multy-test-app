@@ -5,6 +5,7 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -30,6 +31,12 @@ public class Text extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "test_id")
     private Test test;
+
+    @Column(name = "test_title")
+    private String testTitle;
+
+    @Column(name = "test_time")
+    private String testTime;
 
     @ManyToOne
     @JoinColumn(name = "result_id")

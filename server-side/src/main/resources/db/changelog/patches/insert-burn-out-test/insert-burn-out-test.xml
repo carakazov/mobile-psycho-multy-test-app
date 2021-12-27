@@ -5,11 +5,9 @@
                    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
     <changeSet id="008" author="polina.saharova">
         <insert tableName="tests">
-            <column name="title" value="Диагностика уровня эмоционального выгорания В.В.Бойко (в модиф. Е.Ильина)"/>
             <column name="gender_depending" value="false"/>
             <column name="re_answer_enabled" value="false"/>
             <column name="proceeding_type" value="BURN_OUT"/>
-            <column name="expected_time" value="Примерно 20 минут"/>
             <column name="external_id" value="4e85a270-472c-465b-a9ff-1b59405e12ff"/>
         </insert>
     </changeSet>
@@ -19,6 +17,17 @@
             <column name="language_id" value="2"/>
             <column name="test_id" value="1"/>
             <column name="text" value="Вам предлагается ряд утверждений, по каждому выскажите свое мнение. Если вы согласны с утверждением, выберите 'да', иначе 'нет'."/>
+            <column name="test_title" value="Диагностика уровня эмоционального выгорания В.В.Бойко (в модиф. Е.Ильина)"/>
+            <column name="test_time" value="Примерно 20 минут"/>
         </insert>
+
+        <insert tableName="texts">
+            <column name="language_id" value="1"/>
+            <column name="test_id" value="1"/>
+            <column name="text" value="You are offered a number of statements, for each, express your opinion. If you agree with the statement, select yes, otherwise no."/>
+            <column name="test_title" value="Diagnostics of the level of emotional burnout by V.V. Boyko (modified by E. Ilyin)"/>
+            <column name="test_time" value="About 20 minutes"/>
+        </insert>
+
     </changeSet>
 </databaseChangeLog>

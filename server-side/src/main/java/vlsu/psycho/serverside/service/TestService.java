@@ -12,6 +12,7 @@ public interface TestService {
     Test getTestByExternalId(UUID testExternalId);
     boolean existsByExternalId(UUID testExternalId);
     TestDto getTest(UUID testExternalId, String languageCode);
-    Test save(Test test);
-    List<ShowTestDto> getAvailableTests();
+    Test save(Test test, String title, String expectedTime);
+    List<ShowTestDto> getAvailableTests(String languageCode);
+    TestDto getDefaultTest(String language);
 }

@@ -10,5 +10,4 @@ import java.util.UUID;
 public interface TestRepository extends JpaRepository<Test, Integer> {
     boolean existsByExternalId(UUID externalId);
     Test findByExternalId(UUID externalId);
-
 }

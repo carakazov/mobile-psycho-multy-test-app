@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="65dp"
+        android:text="@string/name" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="68dp"
+        android:text="@string/surname" />
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="49dp"
+        android:layout_marginEnd="42dp"
+        android:layout_toEndOf="@+id/textView"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etName"
+        android:layout_alignStart="@+id/etName"
+        android:layout_alignEnd="@+id/etName"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="-4dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="67dp"
+        android:layout_marginTop="216dp" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView11"
+        android:layout_alignStart="@+id/textView11"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="76dp"
+        android:text="@string/middleName" />
+
+    <EditText
+        android:id="@+id/etMiddleName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etSurname"
+        android:layout_alignStart="@+id/etSurname"
+        android:layout_alignEnd="@+id/etSurname"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="-7dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textView13"
+        android:layout_alignEnd="@+id/textView13"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="-34dp"
+        android:layout_marginTop="322dp"
+        android:layout_marginEnd="-24dp"
+        android:text="@string/email" />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/etMiddleName"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="312dp"
+        android:layout_marginEnd="1dp"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="54dp"
+        android:layout_marginBottom="305dp"
+        android:text="@string/gender" />
+
+
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="119dp"
+        android:layout_marginBottom="159dp"
+        android:onClick="changePersonalInfo"
+        android:text="@string/change_personal_info_button" />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="143dp"
+        android:layout_marginBottom="300dp" >
+
+    </RadioGroup>
+
+    <RadioButton
+        android:id="@+id/rbMale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="177dp"
+        android:layout_marginBottom="283dp"
+        android:text="@string/male_gender" />
+
+    <RadioButton
+        android:id="@+id/rbFemale"
+        android:layout_width="102dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/rbMale"
+        android:layout_alignEnd="@+id/rbMale"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="-3dp"
+        android:layout_marginBottom="216dp"
+        android:text="@string/female_gender" />
+
+    <Button
+        android:id="@+id/toStatButton"
+        android:layout_width="190dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button5"
+        android:layout_alignEnd="@+id/button5"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="-2dp"
+        android:layout_marginBottom="95dp"
+        android:onClick="goToTakenTestsList"
+        android:text="@string/to_statistics" />
+
+    <Button
+        android:id="@+id/goToCreateTest"
+        android:layout_width="189dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/toStatButton"
+        android:layout_alignEnd="@+id/toStatButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-4dp"
+        android:layout_marginEnd="-9dp"
+        android:layout_marginBottom="35dp"
+        android:onClick="toCreateTestForm"
+        android:text="@string/create_test" />
+
+</RelativeLayout>

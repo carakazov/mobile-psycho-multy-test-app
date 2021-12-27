@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.client_side" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android:usesCleartextTraffic" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Clientside"
+        android:usesCleartextTraffic="true" >
+        <activity
+            android:name=".activity.AllowedTestActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.AuthFormActivity"
+            android:parentActivityName=".activity.AllowedTestActivity"/>
+        <activity android:name=".activity.RegistrationFormActivity" />
+        <activity android:name=".activity.ChooseGenderActivity" />
+        <activity android:name=".activity.QuestionLayoutActivity" />
+        <activity android:name=".activity.TestResultActivity" />
+        <activity android:name=".activity.MyPageActivity" android:parentActivityName=".activity.AllowedTestActivity"/>
+        <activity android:name=".activity.TakenTestsActivity" android:parentActivityName=".activity.MyPageActivity"/>
+        <activity android:name=".activity.StatisticTestActivity" android:parentActivityName=".activity.TakenTestsActivity"/>
+        <activity android:name=".activity.AddCustomTestActivity" android:parentActivityName=".activity.MyPageActivity"/>
+        <activity android:name=".activity.AddCustomResultActivity" android:parentActivityName=".activity.MyPageActivity"/>
+        <activity android:name=".activity.AddCustomQuestionLayout" android:parentActivityName=".activity.AddCustomQuestionLayout"/>
+        <activity android:name=".activity.TestDescpriptionAnctivity" android:parentActivityName=".activity.AllowedTestActivity"/>
+    </application>
+
+</manifest>

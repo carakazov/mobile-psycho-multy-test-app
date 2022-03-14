@@ -67,6 +67,7 @@ public class TakenTestServiceImpl implements TakenTestService {
     @Override
     public boolean existsByExternalId(UUID takenTestExternalId) {
         return repository.existsByExternalId(takenTestExternalId);
+
     }
 
     @Override

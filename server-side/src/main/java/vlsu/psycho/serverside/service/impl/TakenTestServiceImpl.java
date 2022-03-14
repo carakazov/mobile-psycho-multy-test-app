@@ -3,10 +3,10 @@ package vlsu.psycho.serverside.service.impl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.util.Pair;
 import org.springframework.stereotype.Service;
+import vlsu.psycho.serverside.config.ApplicationProperties;
 import vlsu.psycho.serverside.dto.ResultDto;
-import vlsu.psycho.serverside.dto.test.taken.TakenTestDto;
-import vlsu.psycho.serverside.dto.test.taken.TakenTestListDto;
-import vlsu.psycho.serverside.dto.test.taken.TakenTestListItemDto;
+import vlsu.psycho.serverside.dto.test.CreatedTestDto;
+import vlsu.psycho.serverside.dto.test.taken.*;
 import vlsu.psycho.serverside.model.*;
 import vlsu.psycho.serverside.repository.TakenTestRepository;
 import vlsu.psycho.serverside.service.*;
@@ -23,6 +23,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 @Service
 @RequiredArgsConstructor
@@ -35,6 +36,9 @@ public class TakenTestServiceImpl implements TakenTestService {
     private final UserService userService;
     private final JwtProvider jwtProvider;
     private final TestResultService testResultService;
+    private final ApplicationProperties properties;
+    private final CustomTestService customTestService;
+    private final TextService textService;
 
     @Override
     @Transactional
@@ -93,6 +97,79 @@ public class TakenTestServiceImpl implements TakenTestService {
         });
         response.setTests(items);
         return response;
+    }
+
+    @Override
+    public DefaultTestResultDto calculateDefaultTestResult(TakenTestDto takenTestDto) {
+        ResultDto dto = save(takenTestDto);
+        DefaultTestResultDto result = new DefaultTestResultDto();
+        result.setSelfUnsatisfactoryResult(calculateCriteria(properties.getSelfUnsatisfactory(), takenTestDto.getAnswers()));
+        result.setLockedInCageResult(calculateCriteria(properties.getLockedInCage(), takenTestDto.getAnswers()));
+        result.setProfessionalDutiesReductionResult(calculateCriteria(properties.getProfessionalDutiesReduction(), takenTestDto.getAnswers()));
+        result.setEmotionalDetachmentResult(calculateCriteria(properties.getEmotionalDetachment(), takenTestDto.getAnswers()));
+        result.setSelfDetachmentResult(calculateCriteria(properties.getSelfDetachment(), takenTestDto.getAnswers()));
+        result.setText(dto.getText());
+        return result;
+    }
+
+    @Override
+    public List<CreatedTestDto> getCreated(String languageCode) {
+        UUID authorId = UUID.fromString(jwtProvider.getClaimFromToken(Claim.EXTERNAL_ID).toString());
+        List<CustomTest> tests = customTestService.findByAuthorId(authorId);
+        List<CreatedTestDto> result = new ArrayList<>();
+        tests.forEach(
+                item -> {
+                    List<Text> texts = textService.findByTestId(item.getTest().getId());
+                    Text text = texts.stream()
+                            .filter(tx -> tx.getLanguage().getCode().equals(languageCode))
+                            .findFirst().get();
+                    result.add(new CreatedTestDto(
+                            text.getTestTitle(),
+                            item.getTest().getExternalId()
+                    ));
+                }
+        );
+
+        Test burnOutTest = testService.getTestByExternalId(properties.getBurnOutId());
+        List<Text> texts = textService.findByTestId(burnOutTest.getId());
+        Text text = texts.stream()
+                .filter(tx -> tx.getLanguage().getCode().equals(languageCode))
+                .findFirst().get();
+        result.add(
+                new CreatedTestDto(
+                        text.getTestTitle(),
+                        burnOutTest.getExternalId()
+                )
+        );
+        return result;
+    }
+
+    @Override
+    public List<CreatedTestDto> getMyTakenTests(String languageCode) {
+        List<CreatedTestDto> result = new ArrayList<>();
+        UUID authorId = UUID.fromString(jwtProvider.getClaimFromToken(Claim.EXTERNAL_ID).toString());
+        User user = userService.findByExternalId(authorId);
+        user.getTakenTests().forEach(
+                item -> {
+                    result.add(new CreatedTestDto(
+                            textService.findByTestId(item.getTest().getId()).stream().filter(text -> text.getLanguage().getCode().equals(languageCode)).findFirst().get().getTestTitle(),
+                            item.getExternalId()
+                    ));
+                }
+        );
+        return result;
+    }
+
+    private Integer calculateCriteria(List<UUID> criteriaIds, List<AnsweredQuestionDto> answeredQuestions) {
+        return criteriaIds.stream().flatMapToInt(
+                item -> {
+                    AnsweredQuestionDto aq = answeredQuestions.stream()
+                            .filter(ans -> ans.getTestQuestionId().equals(item))
+                            .findFirst().get();
+                    Answer answer = answerService.findByExternalId(aq.getTestAnswerId());
+                    return IntStream.of(answer.getValue().intValue());
+                }
+        ).sum();
     }
 
     private TakenTestValidationDto formValidationDto(TakenTestDto takenTestDto) {

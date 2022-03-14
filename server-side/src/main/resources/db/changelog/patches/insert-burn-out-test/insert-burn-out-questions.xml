@@ -7,176 +7,211 @@
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="4a65c8e3-1c14-4dea-bca5-fb9281d04a64"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="87698abe-b911-43cf-ac31-98b224057dfe"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="cf5bb868-0773-4110-b38a-7da7feeb3f6c"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="228bfb91-a7a0-4ef0-b43d-d265fe7079cb"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="d70c9fb0-b489-499a-b8b5-796a2d0347c8"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="7b3d2c1a-bdd9-45f4-b5f2-31097c20b0c8"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="4039ae38-7b7a-4380-94a2-6f04e5c6ae4e"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="e28f97f0-ab9b-468a-801b-a34eef1a670e"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="633079ae-f75b-47d9-9a51-ef535d392cd2"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="08f19129-7487-488c-b5ea-4cb536654a3f"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="caa68e0f-772d-4d75-bf22-7b1a628fff4a"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="dcc02a3e-260e-4e1d-b442-3d36db54db11"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="cfe7205a-e95f-49b7-8505-db40d3c30361"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="5d2e960c-f1d3-49f7-bfa1-23340dfcece9"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="73015e10-ea2d-46ce-955f-61334437ffeb"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="d61310f7-551b-4be8-bc5a-ffecc09b5a9f"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="c1026087-0b55-48d5-a518-3296013c235d"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="249bd032-d5f0-4e8d-8675-baf785cb0891"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="255cf86b-c096-4739-a266-abda575d48bc"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="65099910-0a92-4120-9c1a-1b43568d5847"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="2645a693-18b3-45a2-8d5c-a30b2b0f10be"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="9cf886bd-be55-4e1e-a853-63760a94217d"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="c93f2b3c-6386-4b5d-88fc-7483a769f1c0"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="ea214740-82cf-42ae-ac85-e31272e40f46"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="301802eb-8117-45ea-aa10-0d989fda96b5"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="c65d9a52-0589-4d3a-a0b5-1b032b39f057"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="d58aa9be-26b6-4b0b-a5aa-d56d8c8ee0da"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="b3616b95-35bb-40ff-814d-3846e9cd6b8a"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="79874b99-2e53-4a24-bcc1-d844c46ede8d"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="cbd31c36-ac96-4de6-841e-7c5998daa567"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="1b5377ea-39c9-4b53-a889-29165e0ae62c"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="d67d1dd3-9dad-47f5-8a35-56d1e94346fa"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="3ba67aad-ab8c-4d42-9df8-11d08ba4d28d"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="b53f34ff-883f-411d-8037-9d5022858fe9"/>
         </insert>
 
         <insert tableName="questions">
             <column name="multi_answer" value="false"/>
             <column name="test_id" value="1"/>
+            <column name="external_id" value="d41f8f4a-b565-4261-bc56-bc44f909f863"/>
         </insert>
     </changeSet>
 </databaseChangeLog>

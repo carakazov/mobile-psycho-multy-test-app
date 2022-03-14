@@ -36,4 +36,7 @@ public class User extends BaseEntity{
 
     @ManyToMany(mappedBy = "allowedUsers")
     private List<CustomTest> allowedTest;
+
+    @OneToMany(mappedBy = "user")
+    private List<TakenTest> takenTests;
 }

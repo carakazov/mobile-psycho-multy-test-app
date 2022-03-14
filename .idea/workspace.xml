@@ -1,7 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bda90001-4eee-405a-923c-2fd81b149aac" name="Changes" comment="" />
+    <list default="true" id="bda90001-4eee-405a-923c-2fd81b149aac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/dto/test/CreatedTestDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/dto/test/taken/DefaultTestResultDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/dto/test/taken/ResultQuantityStatisticDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/controller/StatisticsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/controller/StatisticsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/controller/TakenTestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/controller/TakenTestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/model/BaseEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/model/BaseEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/repository/CustomTestRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/repository/CustomTestRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/repository/QuestionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/repository/QuestionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/repository/TextRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/repository/TextRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/CustomTestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/CustomTestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/QuestionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/QuestionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/StatisticsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/StatisticsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/TakenTestService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/TakenTestService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/TextService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/TextService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/impl/CustomTestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/impl/CustomTestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/impl/QuestionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/impl/QuestionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/impl/StatisticsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/impl/StatisticsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/impl/TakenTestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/impl/TakenTestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/impl/TestServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/impl/TestServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/impl/TextServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/java/vlsu/psycho/serverside/service/impl/TextServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server-side/src/main/resources/db/changelog/patches/insert-burn-out-test/insert-burn-out-questions.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server-side/src/main/resources/db/changelog/patches/insert-burn-out-test/insert-burn-out-questions.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,6 +44,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -29,10 +57,24 @@
       <option name="presentableId" value="Default" />
       <updated>1636205558660</updated>
       <workItem from="1636205561289" duration="12000" />
+      <workItem from="1640578259228" duration="26000" />
+      <workItem from="1647113676598" duration="8000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

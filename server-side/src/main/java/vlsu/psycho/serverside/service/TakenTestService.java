@@ -1,6 +1,8 @@
 package vlsu.psycho.serverside.service;
 
 import vlsu.psycho.serverside.dto.ResultDto;
+import vlsu.psycho.serverside.dto.test.CreatedTestDto;
+import vlsu.psycho.serverside.dto.test.taken.DefaultTestResultDto;
 import vlsu.psycho.serverside.dto.test.taken.TakenTestDto;
 import vlsu.psycho.serverside.dto.test.taken.TakenTestListDto;
 import vlsu.psycho.serverside.model.TakenTest;
@@ -14,4 +16,7 @@ public interface TakenTestService {
     boolean existsByExternalId(UUID takenTestExternalId);
     TakenTest getByExternalId(UUID takenTestExternalId);
     TakenTestListDto getListOfTakenTests(String languageCode);
+    DefaultTestResultDto calculateDefaultTestResult(TakenTestDto takenTestDto);
+    List<CreatedTestDto> getCreated(String languageCode);
+    List<CreatedTestDto> getMyTakenTests(String languageCode);
 }

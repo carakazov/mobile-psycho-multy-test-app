@@ -33,6 +33,11 @@ public class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
+    public Question findByExternalId(UUID externalId) {
+        return repository.findByExternalId(externalId);
+    }
+
+    @Override
     public boolean existsByExternalId(UUID externalId) {
         return repository.existsByExternalId(externalId);
     }

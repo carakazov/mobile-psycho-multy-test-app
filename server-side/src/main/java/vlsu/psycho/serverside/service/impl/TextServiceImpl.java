@@ -10,6 +10,8 @@ import vlsu.psycho.serverside.service.LanguageService;
 import vlsu.psycho.serverside.service.TextService;
 
 import javax.transaction.Transactional;
+import java.util.List;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
@@ -31,5 +33,10 @@ public class TextServiceImpl implements TextService {
         textObj.setResult(result);
         textObj.setLanguage(language);
         save(textObj);
+    }
+
+    @Override
+    public List<Text> findByTestId(Integer testExternalId) {
+        return repository.findByTestId(testExternalId);
     }
 }

@@ -60,8 +60,8 @@ public class TestServiceImpl implements TestService {
         Test savedTest = repository.save(test);
         test.getDescriptions().forEach(text -> {
             text.setTest(savedTest);
-            text.setTestTime(title);
             text.setTestTime(expectedTime);
+            text.setTestTitle(title);
             textService.save(text);
         });
         test.getQuestions().forEach(question -> {

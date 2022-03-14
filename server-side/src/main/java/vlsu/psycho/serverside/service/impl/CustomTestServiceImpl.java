@@ -18,10 +18,7 @@ import vlsu.psycho.serverside.utils.validation.Validator;
 import vlsu.psycho.serverside.utils.validation.dto.AddCustomTestValidationDto;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.UUID;
+import java.util.*;
 
 @Data
 @RequiredArgsConstructor
@@ -35,6 +32,7 @@ public class CustomTestServiceImpl implements CustomTestService {
     private final JwtProvider jwtProvider;
     private final TestService testService;
     private final TestResultService testResultService;
+    private final TextService textService;
 
     @Override
     @Transactional
@@ -52,5 +50,10 @@ public class CustomTestServiceImpl implements CustomTestService {
         Test test = testService.save(customTest.getTest(), addCustomTestDto.getTitle(), addCustomTestDto.getExpectedTime());
         repository.save(customTest);
         testResultService.saveTestResults(addCustomTestDto.getResults(), test, addCustomTestDto.getLanguageCode());
+    }
+
+    @Override
+    public List<CustomTest> findByAuthorId(UUID externalId) {
+        return repository.findByAuthorExternalId(externalId);
     }
 }
